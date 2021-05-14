@@ -15,9 +15,9 @@ h1{
 }
 h1::after{
     content: '';
-    width: 153px;
+    width: 152px;
     height: 3px;
-    background-color: rgb(17, 80, 255);
+    background-color: #1150ff;
     display: block;
 }
 .clock{
@@ -26,19 +26,19 @@ h1::after{
     padding: 15px;
 }
 #hrs{
-    background-color: rgb(17, 80, 255);
+    background-color: #1150ff;
     color: #fff;
     padding: 10px;
     margin: 2px;
 }
 #mn{
-    background-color: rgb(17, 80, 255);
+    background-color: #1150ff;
     padding: 10px;
     color: #fff;
     margin: 2px;
 }
 #sec{
-    background-color: rgb(17, 80, 255);
+    background-color: #1150ff;
     padding: 10px;
     color: #fff;
     margin: 2px;

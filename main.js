@@ -20,8 +20,11 @@ function engin(){
         document.getElementById("hrs").innerHTML = hrs;
         document.getElementById("mn").innerHTML = mn;
         document.getElementById("sec").innerHTML = sec;
+
 }
 
 engin();
 
 setInterval("engin()", 1000);
+
+// End //
