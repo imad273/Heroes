@@ -1,0 +1,55 @@
+nav {
+   position: fixed;
+   width: calc(100% - 80%);
+   background-color: $second-light;
+   height: 100%;
+   
+   .cont-nav {
+      padding: 10px;
+
+      .brand {
+         width: 85%;
+         margin: 0px auto;
+
+         img {
+            width: 100%;
+            height: 180px;
+         }
+      }
+
+      .links {
+         margin-top: 15%;
+         
+         .nav-link {
+            color: #333;
+            font-size: 17px;
+            padding: .6rem 1rem;
+            font-weight: 500;
+            
+            i {
+               font-size: 20px;
+               position: relative;
+               top: 3px;
+               margin-right: 8px;
+               color: #999;
+               transition: .3s;
+               padding: 5px;
+               border-radius: 50%;
+               
+            }
+
+            &.active{
+               color: $main-hover;
+            }
+            &.active > i {
+               color: $main-hover;
+               background-color: $bg-main;
+            }
+            &:hover, &:hover > i {
+               color: $main-hover;
+            }
+            
+         }
+      }
+   }
+}

@@ -1,0 +1,227 @@
+$main: rgb(69, 41, 255);
+$main-hover: rgb(33, 1, 248);
+$bg-main: #d6e5ff;
+$main-light: #FFF;
+$second-light: #F8F8F8;
+$border: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+* {
+   font-family: 'Ubuntu', sans-serif;
+}
+body {
+   color: #222;
+   background-color: $main-light;
+}
+
+.content {
+   width: calc(100% - 20%);
+   position: absolute;
+   right: 0px;
+
+   .header {
+      background-color: $second-light;
+      padding: 15px 30px;
+      border-left: 2px solid $main-hover;
+      box-shadow: $border;
+      
+      .tit {
+         display: flex;
+         align-items: center;
+   
+         i {
+            font-size: 20px;
+            margin-right: 8px;
+            transition: .3s;
+            padding: 5px;
+            border-radius: 50%;
+            color: $main-hover;
+            background-color: $bg-main;
+         }
+   
+         span {
+            font-size: 18px;
+            font-weight: 700; 
+         }
+      }
+   }
+}
+
+.table-responsive {
+   margin: 10px;
+}
+
+.table {
+   margin-bottom: 0px;
+
+   thead {
+      background-color: $second-light;
+      border-bottom: 2px solid #ddd;
+   }
+   & > :not(:first-child) {
+      border-top: none;
+   }
+
+   tr {
+      vertical-align: baseline;
+   }
+
+
+   i {
+      font-size: 21px;
+      margin: 0px 5px;
+      transition: .2s;
+   }
+
+   .icn-edit {
+      color: #28DBBB;
+   }
+
+   .icn-dlt {
+      cursor: pointer;
+      color: #FF3A3A;
+   }
+}
+
+
+
+/* Bootstrap Config  */
+.btn-primary {
+   background-color: $main;
+   border-color: $main;
+   font-weight: 500;
+
+   &:hover {
+      background-color: $main-hover;
+      border-color: $main-hover;
+   }
+
+   &:focus {
+      background-color: $main-hover;
+      border-color: $main-hover;
+      box-shadow: none;
+   }
+
+   &:active:focus {
+      box-shadow: none;
+   }
+}
+
+.dropdown {
+   .dropdown-item {
+      cursor: pointer;
+
+      &:hover {
+         background-color: $main;
+         color: $main-light;
+      }
+   }
+}
+
+
+.form-control {
+   border: 2px solid $main-light;
+   background-color: $main-light;
+   border-radius: .30rem;
+   box-shadow: $border;
+
+   &:focus {
+      border-color: $main;
+      box-shadow: none;
+      background-color: $main-light;
+   }
+}
+
+.form-select {
+   &:focus {
+      border-color: $main;
+      box-shadow: none;
+      background-color: $main-light;
+   }
+}
+
+.conf-alert {
+   height: 100vh;
+   width: 100%;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   z-index: 1111;
+   backdrop-filter: blur(5px);
+
+   .confirm-msg {
+      background-color: #fff;
+      padding: 5px 20px;
+      box-shadow: $border;
+      
+      span {
+         padding: 10px 0px;
+         display: block;
+      }
+   }
+}
+
+
+
+@import "alert";
+
+@import "navbar";
+
+@import "login";
+
+@import "dashboard";
+
+@import "inventory";
+
+
+
+
+
+
+
+@media screen and (max-width: 625px){
+   .login {
+      .content {
+         width: 80%;
+      }
+   }
+   nav {
+      .cont-nav {
+         .brand {
+            img {
+               height: 100px;
+            }
+         }
+      }
+      
+   }
+
+   .dashboard {
+      .overview {
+   
+         .tab {
+            width: 100%;
+         }
+      }
+   }
+
+   .inventory {
+      .edit-form {
+         .edit-img {
+            .row>* {
+               flex-shrink: 1;
+               
+               .cont {
+                  width: 100%;
+
+                  img {
+                     height: 200px;
+                  }
+               } 
+            } 
+         }
+      }
+   }
+}

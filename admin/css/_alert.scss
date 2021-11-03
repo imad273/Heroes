@@ -1,0 +1,39 @@
+.alert-err {
+   margin: 8px 0px;
+   display: none;
+   padding: 10px;
+   background-color: #F5C5DE;
+   border-radius: .30rem;
+
+   #err-msg {
+      display: flex;
+      align-items: center;
+      color: #DE3C63;
+      font-weight: 700;
+
+      i {
+         font-size: 34px;
+         margin-right: 10px;
+      }
+   }
+}
+
+.alert-suc {
+   margin: 8px 0px;
+   display: none;
+   padding: 10px;
+   background-color: #B3FEF7;
+   border-radius: .30rem;
+
+   #suc-msg {
+      display: flex;
+      align-items: center;
+      color: #30AFD4;
+      font-weight: 700;
+
+      i {
+         font-size: 34px;
+         margin-right: 10px;
+      }
+   }
+}
