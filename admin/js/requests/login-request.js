@@ -34,11 +34,20 @@ submit.addEventListener("click", () => {
    }
 })
 
-function sayError(msg) {
+/* function sayError(msg) {
    if(msg != null) {
       alertMsg.style.display = "block";
       alertMsg.childNodes[1].innerHTML = msg;
    } else {
       alertMsg.style.display = "none";
    }
+} */
+
+function sayError(msg) {
+   if (msg != null) {
+      alertMsg.style.display = "block";
+      alertMsg.className = "alert-err";
+      alertMsg.childNodes[1].innerHTML = "<i class='bx bxs-error'></i> " + msg;
+      alertMsg.childNodes[1].setAttribute('id', "err-msg");
+   } 
 }

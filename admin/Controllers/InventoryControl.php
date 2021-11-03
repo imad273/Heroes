@@ -10,7 +10,10 @@ class inventory {
       $action = isset($_GET["action"]) ? $_GET["action"] : header("location: ../index.php");;
       if($action == "category") {
          // Category Function
-         $this->category();
+         $stmt = $this->category();
+         
+         // Output The New Data To users
+         $this->table($stmt);
 
       } elseif ($action == "search") {
          // Search Function
@@ -96,7 +99,8 @@ class inventory {
       return $stmt;
    }
    
-   private function searchInventory($keyword) {
+   // Get Data Search From Database Function
+   private function getSearchData($keyword) {
       $con = $this->conectDataBase();
    
       if($keyword !== "") {
@@ -108,6 +112,7 @@ class inventory {
       $stmt = $con->prepare("SELECT items.*, categories.Name AS Category_Name FROM items INNER JOIN categories ON items.Category = categories.cat_ID $keyword");
       $stmt->execute();
 
+      // If The Keyword Not Matched
       if($stmt->rowCount() == 0) {
          echo "<th colspan='5' class='text-center align-middle'><i class='bx bxs-error-alt bx-flashing' style='color: #FF3A3A; font-size: 36px'></i><p>No Search Match</p></th>";
       }
@@ -115,6 +120,7 @@ class inventory {
       return $stmt;
    }
 
+   // Get items of the selected Category Data Function
    private function category() {
       $category_id = $_POST["cat_id"];
       if($category_id == 0) {
@@ -123,21 +129,23 @@ class inventory {
          $stmt = $this->getInventoryData($category_id);
       }
 
-      return $this->table($stmt);
+      return $stmt;
    }
 
+   // Get The Search Data Of The Keyword Data Function
    private function search() {
       $keyValue = $_POST["keyword"];
       if($keyValue == "") {
          $stmt = $this->getInventoryData();
       } else {
          $keyword = "'%" . $keyValue . "%'";
-         $stmt = $this->searchInventory($keyword);
+         $stmt = $this->getSearchData($keyword);
       }
 
       return $stmt;
    }
 
+   // Delete Item From Database
    private function DeleteFromInve($id) {
       $con = $this->conectDataBase();
    
@@ -147,6 +155,7 @@ class inventory {
       return $stmt;
    }
 
+   // Insert The Edit's Into The Database
    private function insertEdit($id) {
       $con = $this->conectDataBase();
          
@@ -179,6 +188,7 @@ class inventory {
       }
    }
 
+   // Insert The New Image Into Databse
    private function editImg($id) {
       $con = $this->conectDataBase();
 
@@ -187,6 +197,9 @@ class inventory {
       $ftc = $stmt->fetch();
       
       $curent_imgs = $ftc['Images'];
+
+      // I store the imges in the Database into Json Formate
+      // For that you will be convert it to PHP Array to use the images
       $arr_imgs = json_decode($curent_imgs);
 
       $img = $_FILES['img']['name'];
@@ -199,22 +212,23 @@ class inventory {
 
       $imgs = json_encode($arr_imgs, JSON_UNESCAPED_SLASHES);
 
-      $stmt = $con->prepare("UPDATE items SET Images = ?");
+      $stmt = $con->prepare("UPDATE items SET Images = ? WHERE Item_ID = '$id'");
       $stmt->execute(array($imgs));
 
-
+      // Output the New Images
       $stmt2 = $con->prepare("SELECT * FROM items WHERE Item_ID = '$id'");
       $stmt2->execute();
       $ftc2 = $stmt2->fetch();
 
-
       $new_images = json_decode($ftc2['Images']);
+      $index = 0;
       foreach($new_images as $img) {
-         echo "<div class'col'>
+         $key = $index++;
+         echo "<div class'col-md-4'>
                   <div class='cont' onmouseover='showControl(this)' onmouseout='hideControl(this)'>
                      <div class='cntrl' id='cntrl'>
-                        <input type='file' name='img' id='img' class='edit-btn'>
-                        <label for='img'><i class='bx bxs-edit-alt'></i></label>
+                        <label for='img" . $key . "' class='edit-btns' onclick='editImg()'><i class='bx bxs-edit-alt'></i></label>
+                        <input type='file' name='img' class='img' id='img" . $key . "'>
                      </div>
                      <img src='" . $img . "'>
                   </div>

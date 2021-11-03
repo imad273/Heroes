@@ -90,19 +90,21 @@ body {
   font-weight: 500;
 }
 
-.btn-primary:hover {
-  background-color: #2101f8;
-  border-color: #2101f8;
-}
-
-.btn-primary:focus {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active:focus {
   background-color: #2101f8;
   border-color: #2101f8;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.btn-primary:active:focus {
+.btn-danger {
+  background-color: #FF3A3A;
+  border: 1px solid #FF3A3A;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active:focus {
+  background-color: #DB2A39;
+  border-color: #DB2A39;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -404,8 +406,8 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
 }
 
 .inventory .inv-table .search .form-control {
-  background-color: #F8F8F8;
-  border: 1px solid #d8d8d8;
+  background-color: #FFF;
+  border: 1px solid #F8F8F8;
   -webkit-box-shadow: none;
           box-shadow: none;
 }

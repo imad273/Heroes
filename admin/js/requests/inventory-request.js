@@ -54,12 +54,6 @@ if (searchField != null) {
 }
 
 
-
-
-
-
-
-
 function deleteItem(id) {
 
    var alertMsg = document.getElementById("conf-alert");
@@ -97,7 +91,6 @@ function deleteItem(id) {
    * Edit Item Request
 
 */
-
 var editBtn = document.getElementById("submit-edit");
 var inputs = document.getElementsByClassName("form-control");
 // Categories Choise
@@ -179,24 +172,20 @@ if (editBtn !== null) {
 }
 
 
-
-
-
 // Edit Images
-var ediItmgBtns = document.getElementsByClassName("edit-btn");
+var ediItmgBtns = document.getElementsByClassName("edit-btns");
 var file = document.getElementsByClassName("img");
 let rowImgs = document.getElementById("imgs-row");
 var srcOfNewImg;
 let position;
 
 
-for(let i = 0; i < ediItmgBtns.length; i++) {
-   ediItmgBtns[i].addEventListener("click", () => {
-
+function editImg() {
+   for(let i = 0; i < file.length; i++) {
       file[i].addEventListener("input", () => {
          position = i;
          srcOfNewImg = file[i].files[0];
-         
+
          let request = new XMLHttpRequest();
          let form = new FormData();
 
@@ -215,10 +204,7 @@ for(let i = 0; i < ediItmgBtns.length; i++) {
             }
          }
 
-         request.send(form); 
+         request.send(form);
       })
-   }) 
+   }
 }
-
-
-   

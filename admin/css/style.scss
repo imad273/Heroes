@@ -90,21 +90,24 @@ body {
    border-color: $main;
    font-weight: 500;
 
-   &:hover {
+   &:hover, &:focus, &:active:focus {
       background-color: $main-hover;
       border-color: $main-hover;
-   }
-
-   &:focus {
-      background-color: $main-hover;
-      border-color: $main-hover;
-      box-shadow: none;
-   }
-
-   &:active:focus {
       box-shadow: none;
    }
 }
+
+.btn-danger {
+   background-color: #FF3A3A;
+   border: 1px solid #FF3A3A;
+
+   &:hover , &:focus, &:active:focus {
+      background-color: #DB2A39;
+      border-color: #DB2A39;
+      box-shadow: none;
+   }
+}
+
 
 .dropdown {
    .dropdown-item {

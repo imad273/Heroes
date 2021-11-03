@@ -151,16 +151,17 @@
                            <label class="form-label d-block">Images</label>
                            <div class="row " id="imgs-row">
                               <?php
+                              // I store the imges in the Database into Json Formate
+                              // For that you will be convert it to PHP Array to use the images
                               $images = json_decode($ftc['Images']);
+                              $index = 0;
                               foreach($images as $img) {
+                                 $key = $index++;
                                  echo "<div class'col-md-4'>
                                           <div class='cont' onmouseover='showControl(this)' onmouseout='hideControl(this)'>
-                                             <div class='cntrl active' id='cntrl'>
-                                                
-                                                <label class='edit-btn'>
-                                                   <i class='bx bxs-edit-alt'></i>
-                                                   <input type='file' name='img' class='img' id='img'>
-                                                </label>
+                                             <div class='cntrl' id='cntrl'>
+                                                <label for='img" . $key . "' class='edit-btns' onclick='editImg()'><i class='bx bxs-edit-alt'></i></label>
+                                                <input type='file' name='img' class='img' id='img" . $key . "'>
                                              </div>
                                              <img src='" . $img . "'>
                                           </div>
@@ -186,6 +187,6 @@
    <!-- Inventory requests -->
    <script src="js/requests/inventory-request.js"></script>
 
-   <?php
+<?php
    include "includes/footer.php";
 ?>
