@@ -82,7 +82,7 @@
             </div>
             <div class="conf-alert" id="conf-alert">
                <div class="confirm-msg">
-                  <span>Are You Sure You Went To Delete</span>
+                  <span>Are You Sure You Want To Delete?</span>
                   <div class="btns float-end">
                      <button class="btn btn-danger" id="cancelBtn">Cancel</button>
                      <button class="btn btn-success" id="yesBtn">Yes</button>

@@ -59,6 +59,7 @@ function deleteItem(id) {
    var alertMsg = document.getElementById("conf-alert");
    var cancel = document.getElementById("cancelBtn");
    var yesBtn = document.getElementById("yesBtn");
+   var Catbtn2 = document.getElementById("dropdownMenuBtn");
    
    var itemId = id;
    alertMsg.style.display = "flex";
@@ -75,6 +76,7 @@ function deleteItem(id) {
          if (request.readyState === 4 && request.status === 200) {
             alertMsg.style.display = "none";
             tbody.innerHTML = request.responseText;
+            Catbtn2.innerHTML = "Select Category ";
          }
       }
 

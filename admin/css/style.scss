@@ -74,11 +74,19 @@ body {
 
    .icn-edit {
       color: #28DBBB;
+
+      &:hover {
+         color: #23C4A6;
+      }
    }
 
    .icn-dlt {
       cursor: pointer;
       color: #FF3A3A;
+
+      &:hover {
+         color: #E23442;
+      }
    }
 }
 
@@ -102,12 +110,22 @@ body {
    border: 1px solid #FF3A3A;
 
    &:hover , &:focus, &:active:focus {
-      background-color: #DB2A39;
-      border-color: #DB2A39;
+      background-color: #E23442;
+      border-color: #E23442;
       box-shadow: none;
    }
 }
 
+.btn-success {
+   background-color: #28DBBB;
+   border: 1px solid #28DBBB;
+
+   &:hover , &:focus, &:active:focus {
+      background-color: #23C4A6;
+      border-color: #23C4A6;
+      box-shadow: none;
+   }
+}
 
 .dropdown {
    .dropdown-item {
@@ -156,11 +174,14 @@ body {
 
    .confirm-msg {
       background-color: #fff;
-      padding: 5px 20px;
+      padding: 10px 20px;
       box-shadow: $border;
+      border-radius: 5px;
       
       span {
-         padding: 10px 0px;
+         font-size: 20px;
+         font-weight: 500;
+         padding: 10px 30px 30px 00px;
          display: block;
       }
    }
