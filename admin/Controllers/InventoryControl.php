@@ -134,7 +134,7 @@ class inventory {
 
    // Get The Search Data Of The Keyword Data Function
    private function search() {
-      $keyValue = $_POST["keyword"];
+      $keyValue = filter_var($_POST["keyword"], FILTER_SANITIZE_STRING);
       if($keyValue == "") {
          $stmt = $this->getInventoryData();
       } else {
@@ -159,11 +159,11 @@ class inventory {
    private function insertEdit($id) {
       $con = $this->conectDataBase();
          
-      $name = $_POST["name"];
-      $desc = $_POST['desc'];
-      $price = $_POST['price'];
-      $que = $_POST['qua'];
-      $cat = $_POST['cat'];
+      $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+      $desc = filter_var($_POST['desc'], FILTER_SANITIZE_STRING);
+      $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_INT);
+      $que = filter_var($_POST['qua'], FILTER_SANITIZE_NUMBER_INT);
+      $cat = filter_var($_POST['cat'], FILTER_SANITIZE_NUMBER_INT);
 
       $errors = array();
 
@@ -207,6 +207,9 @@ class inventory {
 
       $image = rand(0, 100000000) . "_" . $img;
       move_uploaded_file($img_tmp, '..\uploads\\' . $image);
+
+      // Delete The Current Image
+      unlink('../' . $arr_imgs[$_POST['posImg']]);
 
       $arr_imgs[$_POST['posImg']] = "uploads/" . $image;
 

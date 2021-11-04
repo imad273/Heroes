@@ -2,113 +2,134 @@
    * Toggle between categories 
 */
 
-var cats = document.getElementsByClassName("cats");
-var btn = document.getElementById("dropdownMenuBtn");
+var categories = document.getElementsByClassName("cats");
+var categoryBtn = document.getElementById("dropdownMenuBtn");
 var tbody = document.getElementById("tbody");
 
-for (var i = 0; i < cats.length; i++) {
-   cats[i].addEventListener("click", (e) => {
-      var cat_id = e.target.attributes[0].value;
+for (var i = 0; i < categories.length; i++) {
+   categories[i].addEventListener("click", (e) => {
+      var categoryId = e.target.attributes[0].value;
 
       let request = new XMLHttpRequest();
       let form = new FormData();
-
-      form.append("cat_id", cat_id);
-
+      
+      form.append("cat_id", categoryId);
+      
+      // Open http request
       request.open("POST", "././Controllers/InventoryControl.php?action=category");
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
+            // Output The Response In The Table
             tbody.innerHTML = request.responseText;
-            if (cat_id == 0) {
-               btn.innerHTML = "Select Category ";
+
+            // If No Category Selected
+            if (categoryId == 0) {
+               categoryBtn.innerHTML = "Select Category ";
             } else {
-               btn.innerHTML = e.target.innerText;
+               // Else Print The Selected category
+               categoryBtn.innerHTML = e.target.innerText;
             }
          }
       }
 
+      // Send the request with form
       request.send(form);
    })
 }
 
-/* Search Fueture */
+/* 
+   * Search Function 
+*/
+
 var searchField = document.getElementById("search-ipt");
+var categoryBtn2 = document.getElementById("dropdownMenuBtn");
+
+// ! I Checked If There Is Search Input Because This File Is Used In More Than Page //
 if (searchField != null) {
    searchField.addEventListener("input", () => {
+      
       let request = new XMLHttpRequest();
       let form = new FormData();
 
       form.append("keyword", searchField.value);
 
+      // Open http request
       request.open("POST", "././Controllers/InventoryControl.php?action=search");
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
+            // Output The Response In The Table
             tbody.innerHTML = request.responseText;
+            categoryBtn2.innerHTML = "Select Category ";
          }
       }
 
+      // Send the request with form
       request.send(form);
    })
 }
 
+/*
+   * Delete Function
+*/
 
 function deleteItem(id) {
-
    var alertMsg = document.getElementById("conf-alert");
    var cancel = document.getElementById("cancelBtn");
    var yesBtn = document.getElementById("yesBtn");
-   var Catbtn2 = document.getElementById("dropdownMenuBtn");
+   var categoryBtn3 = document.getElementById("dropdownMenuBtn");
    
    var itemId = id;
    alertMsg.style.display = "flex";
 
+   // If The User Click On Yes Button Send The Request
    yesBtn.addEventListener("click", () => {
       let request = new XMLHttpRequest();
       let form = new FormData();
 
       form.append("itemId", itemId);
 
+      // Open http request
       request.open("POST", "././Controllers/InventoryControl.php?action=delete");
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
             alertMsg.style.display = "none";
+
+            // Print The Remaining Items
             tbody.innerHTML = request.responseText;
-            Catbtn2.innerHTML = "Select Category ";
+            categoryBtn3.innerHTML = "Select Category ";
          }
       }
 
+      // Send the request with form
       request.send(form);
    })
 
    cancel.addEventListener("click", () => {
+      // If The User Click In Cancel Button Hide The Alert
       alertMsg.style.display = "none";
    }) 
 }
 
 /* 
-
    * Edit Item Request
-
 */
-var editBtn = document.getElementById("submit-edit");
+var saveBtn = document.getElementById("submit-edit");
 var inputs = document.getElementsByClassName("form-control");
 // Categories Choise
-var cats = document.getElementsByClassName("cats-edit");
-var catBtn = document.getElementById("catBtn");
+var categories = document.getElementsByClassName("cats-edit");
+var categoryBtn4 = document.getElementById("catBtn");
 
 // Get the new Category if the user change it
-for (let i = 0; i < cats.length; i++) {
-   cats[i].addEventListener("click", function () {
+for (let i = 0; i < categories.length; i++) {
+   categories[i].addEventListener("click", function () {
       catId = this.attributes[0].value;
-      catBtn.setAttribute("data", catId);
-      catBtn.innerHTML = this.innerHTML;
+      categoryBtn4.setAttribute("data", catId);
+      categoryBtn4.innerHTML = this.innerHTML;
    })
 }
-
-
 
 /* 
    * Failed And Success Message
@@ -116,6 +137,7 @@ for (let i = 0; i < cats.length; i++) {
 
 var alertMsg = document.querySelector("#alert");
 
+// Error Message
 function sayError(msg) {
    if (msg != null) {
       alertMsg.style.display = "block";
@@ -125,6 +147,7 @@ function sayError(msg) {
    } 
 }
 
+// Success Message
 function saySuccess(msg) {
    if (msg != null) {
       alertMsg.style.display = "block";
@@ -135,17 +158,15 @@ function saySuccess(msg) {
 }
 
 // Send The edit Request
-if (editBtn !== null) {
-   editBtn.addEventListener("click", () => {
+if (saveBtn !== null) {
+   saveBtn.addEventListener("click", () => {
       let request = new XMLHttpRequest();
       let form = new FormData();
 
-      // Set All the input's value in the form
       for (let i = 0; i < inputs.length; i++) {
          form.append(inputs[i].name, inputs[i].value);
       }
 
-      // append the category
       form.append("cat", catBtn.attributes[3].value);
 
       // Get the query string of id in the link to identify each items
@@ -153,6 +174,7 @@ if (editBtn !== null) {
       const params = Object.fromEntries(urlSearchParams.entries());
       form.append("id", params.id);
 
+      // Open http request
       request.open("POST", "././Controllers/InventoryControl.php?action=edit");
 
       request.onreadystatechange = () => {
@@ -169,24 +191,28 @@ if (editBtn !== null) {
          }
       }
 
+      // Send the request with form
       request.send(form);
    })
 }
 
 
-// Edit Images
-var ediItmgBtns = document.getElementsByClassName("edit-btns");
-var file = document.getElementsByClassName("img");
-let rowImgs = document.getElementById("imgs-row");
-var srcOfNewImg;
-let position;
-
+/* 
+   * Edit Images
+*/
 
 function editImg() {
-   for(let i = 0; i < file.length; i++) {
-      file[i].addEventListener("input", () => {
+   var inputImgs = document.getElementsByClassName("img");
+   var rowImgs = document.getElementById("imgs-row");
+   var srcOfNewImg;
+   // Postion Is Mean The Position Of The Image That User Want To Change It
+   var position;
+   
+   for(let i = 0; i < inputImgs.length; i++) {
+      inputImgs[i].addEventListener("input", () => {
          position = i;
-         srcOfNewImg = file[i].files[0];
+
+         srcOfNewImg = inputImgs[i].files[0];
 
          let request = new XMLHttpRequest();
          let form = new FormData();
@@ -194,10 +220,12 @@ function editImg() {
          form.append("img", srcOfNewImg);
          form.append("posImg", position);
 
+         // Get the query string of id in the link to identify each items
          const urlSearchParams = new URLSearchParams(window.location.search);
          const params = Object.fromEntries(urlSearchParams.entries());
          form.append("id", params.id);
 
+         // Open http request
          request.open("POST", "././Controllers/InventoryControl.php?action=edit-img");
 
          request.onreadystatechange = () => {
@@ -206,6 +234,7 @@ function editImg() {
             }
          }
 
+         // Send the request with form
          request.send(form);
       })
    }
