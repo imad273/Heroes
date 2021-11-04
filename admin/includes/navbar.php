@@ -5,7 +5,16 @@
       </div>
       <div class="links">
          <a href="dashboard.php" class="nav-link <?php setActiveClass("Dashboard") ?>"><i class='bx bxs-dashboard'></i> Dashboard</a>
-         <a href="inventory.php" class="nav-link <?php setActiveClass("Inventory") ?>"><i class='bx bxs-cube'></i> Inventory</a>
+         <li class="nav-link dropdown p-0"> 
+            <a class="nav-link dropdown-toggle <?php setActiveClass("Inventory") ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <i class='bx bxs-cube'></i> Inventory
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <li><a class="dropdown-item" href="inventory.php">View All Items</a></li>
+               <li><hr class="dropdown-divider"></li>
+               <li><a class="dropdown-item" href="#">Add items</a></li>
+            </ul>
+         </li>
          <a href="#" class="nav-link <?php setActiveClass("Purchase") ?>"><i class='bx bxs-cart-alt'></i> Purchase</a>
          <a href="#" class="nav-link <?php setActiveClass("Customers") ?>"><i class='bx bxs-user-detail'></i> Customers</a>
          <a href="#" class="nav-link <?php setActiveClass("Messages") ?>"><i class='bx bxs-envelope'></i> Messages</a>
