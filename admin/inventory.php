@@ -149,7 +149,7 @@
                      <div class="mb-3">
                         <div class="edit-img">
                            <label class="form-label d-block">Images</label>
-                           <div class="row " id="imgs-row">
+                           <div class="row-me" id="imgs-row">
                               <?php
                               // I store the imges in the Database into Json Formate
                               // For that you will be convert it to PHP Array to use the images
@@ -157,7 +157,7 @@
                               $index = 0;
                               foreach($images as $img) {
                                  $key = $index++;
-                                 echo "<div class'col-md-4'>
+                                 echo "<div class='blk'>
                                           <div class='cont' onmouseover='showControl(this)' onmouseout='hideControl(this)'>
                                              <div class='cntrl' id='cntrl'>
                                                 <label for='img" . $key . "' class='edit-btns' onclick='editImg()'><i class='bx bxs-edit-alt'></i></label>
