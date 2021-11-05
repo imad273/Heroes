@@ -12,7 +12,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                <li><a class="dropdown-item" href="inventory.php">View All Items</a></li>
                <li><hr class="dropdown-divider"></li>
-               <li><a class="dropdown-item" href="#">Add items</a></li>
+               <li><a class="dropdown-item" href="inventory.php?action=add-items">Add items</a></li>
             </ul>
          </li>
          <a href="#" class="nav-link <?php setActiveClass("Purchase") ?>"><i class='bx bxs-cart-alt'></i> Purchase</a>

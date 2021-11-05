@@ -1,3 +1,26 @@
+
+var alertMsg = document.querySelector("#alert");
+
+// Error Message
+function sayError(msg) {
+   if (msg != null) {
+      alertMsg.style.display = "block";
+      alertMsg.className = "alert-err";
+      alertMsg.childNodes[1].innerHTML = "<i class='bx bxs-error'></i> " + msg;
+      alertMsg.childNodes[1].setAttribute('id', "err-msg");
+   } 
+}
+
+// Success Message
+function saySuccess(msg) {
+   if (msg != null) {
+      alertMsg.style.display = "block";
+      alertMsg.className = "alert-suc";
+      alertMsg.childNodes[1].innerHTML = "<i class='bx bx-list-check'></i> " + msg;
+      alertMsg.childNodes[1].setAttribute('id', "suc-msg");
+   }
+}
+
 /* 
    * Toggle between categories 
 */
@@ -135,27 +158,7 @@ for (let i = 0; i < categories.length; i++) {
    * Failed And Success Message
 */
 
-var alertMsg = document.querySelector("#alert");
 
-// Error Message
-function sayError(msg) {
-   if (msg != null) {
-      alertMsg.style.display = "block";
-      alertMsg.className = "alert-err";
-      alertMsg.childNodes[1].innerHTML = "<i class='bx bxs-error'></i> " + msg;
-      alertMsg.childNodes[1].setAttribute('id', "err-msg");
-   } 
-}
-
-// Success Message
-function saySuccess(msg) {
-   if (msg != null) {
-      alertMsg.style.display = "block";
-      alertMsg.className = "alert-suc";
-      alertMsg.childNodes[1].innerHTML = "<i class='bx bx-list-check'></i> " + msg;
-      alertMsg.childNodes[1].setAttribute('id', "suc-msg");
-   }
-}
 
 // Send The edit Request
 if (saveBtn !== null) {
@@ -167,7 +170,7 @@ if (saveBtn !== null) {
          form.append(inputs[i].name, inputs[i].value);
       }
 
-      form.append("cat", catBtn.attributes[3].value);
+      form.append("cat", categoryBtn4.attributes[3].value);
 
       // Get the query string of id in the link to identify each items
       const urlSearchParams = new URLSearchParams(window.location.search);
@@ -238,4 +241,79 @@ function editImg() {
          request.send(form);
       })
    }
+}
+
+
+var inputImg = document.getElementById("new-img");
+var rowImg = document.getElementById("img-row");
+var reset = document.getElementById("rstBtn");
+var imgsDetails = Array();
+
+
+if(inputImg !== null) {
+   inputImg.addEventListener("input", () => {
+      imgsDetails.push(inputImg.files[0]);
+
+      var imgElm = document.createElement("img");
+      var src = URL.createObjectURL(inputImg.files[0]);
+      imgElm.setAttribute("src", src);
+      imgElm.setAttribute("class", "img-ls");
+      rowImg.appendChild(imgElm);
+   });
+
+   reset.addEventListener("click", () => {
+      emtyInputImg();
+   })
+   
+   var emtyInputImg = () => {
+      imgsDetails = Array();
+
+      rowImg.innerHTML = "";
+
+      inputImg.value = "";
+   }
+
+   var saveBtn = document.getElementById("submit-new");
+   var inputs = document.getElementsByClassName("add-input");
+   var categoryBtn5 = document.getElementById("catBtn");
+
+   saveBtn.addEventListener("click", () => {
+
+      let request = new XMLHttpRequest();
+      let form = new FormData();
+
+      for(let i = 0; i < inputs.length; i++) {
+         form.append(inputs[i].name, inputs[i].value);   
+      }
+
+      form.append("cat", categoryBtn5.attributes[3].value);
+
+      imgsDetails.forEach(function(image, i) {
+         form.append('imgsDetails_' + i, image);
+      });
+
+      // Open http request
+      request.open("POST", "././Controllers/InventoryControl.php?action=add-item");
+
+      request.onreadystatechange = () => {
+         if (request.readyState === 4 && request.status === 200) {
+            console.log(request.responseText);
+            if(request.responseText == "") {
+               saySuccess("Data Saved");
+               for(let i = 0; i < inputs.length; i++) {
+                  inputs[i].value = "";  
+                  window.scrollTo(0, 0); 
+                  emtyInputImg();
+                  categoryBtn5.innerHTML = "Select Category";
+               }
+            } else {
+               sayError(request.responseText);
+               window.scrollTo(0, 0);
+            }
+         }
+      }
+
+      // Send the request with form
+      request.send(form);
+   })
 }

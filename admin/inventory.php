@@ -102,7 +102,7 @@
                      <span> Edit Item</span>
                   </div>
                </div>
-               <div class="edit-form">
+               <div class="inv-form">
                   <div class="alert-err" id="alert">
                      <div id="err-msg"></div>
                   </div>
@@ -161,7 +161,7 @@
                                           <div class='cont' onmouseover='showControl(this)' onmouseout='hideControl(this)'>
                                              <div class='cntrl' id='cntrl'>
                                                 <label for='img" . $key . "' class='edit-btns' onclick='editImg()'><i class='bx bxs-edit-alt'></i></label>
-                                                <input type='file' name='img' class='img' id='img" . $key . "'>
+                                                <input type='file' name='img' accept='.png, .jpeg, .jpg' class='img' id='img" . $key . "'>
                                              </div>
                                              <img src='" . $img . "'>
                                           </div>
@@ -169,10 +169,67 @@
                               } ?>
                            </div>
                         </div>
-                        
                      </div>
                      <div class="submit d-flex">
                         <button class="btn btn-primary ms-auto" id="submit-edit">Save</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </section>
+<?php
+      } elseif ($link == "add-items") { ?>
+         <section class="inventory d-flex">
+            <?php include "includes/navbar.php"; ?>
+            <div class="content">
+               <div class="header">
+                  <div class="tit">
+                     <i class='bx bxs-cube'></i>
+                     <span> Add Item</span>
+                  </div>
+               </div>
+               <div class="inv-form">
+                  <div class="alert-err" id="alert">
+                     <div id="err-msg"></div>
+                  </div>
+                  <form onsubmit="return false">
+                     <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control add-input" id="name" autocomplete="OFF">
+                     </div>
+                     <div class="mb-3">
+                        <label for="desc" class="form-label">Description</label>
+                        <textarea name="desc" rows="5" class="form-control add-input" id="desc"></textarea>
+                     </div>
+                     <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" name="price" class="form-control add-input" id="price" autocomplete="OFF">
+                     </div>
+                     <div class="mb-3">
+                        <label for="qua" class="form-label">Quantity</label>
+                        <input type="text" name="qua" class="form-control add-input" id="qua" autocomplete="OFF">
+                     </div>
+                     <div class="mb-3">
+                        <div class="dropdown ">
+                           <button class="btn btn-primary dropdown-toggle w-100 text-start" type="button" id="catBtn" data="No Select" data-bs-toggle="dropdown" aria-expanded="false">
+                              Select Category
+                           </button>
+                           <ul class="dropdown-menu w-100" aria-labelledby="catBtn">
+                           <?php
+                              $stmtCat = getData("categories");
+                              while($ftcCat = $stmtCat->fetch()) {
+                                 echo "<li data='" . $ftcCat["cat_ID"] . "' class='dropdown-item cats-edit'>" . $ftcCat["Name"] . "</li>";
+                              }  ?>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="mb-3 add-images">
+                        <input type="file" id="new-img" class="form-control">
+                        <button class="btn btn-success float-end m-2" id="rstBtn"><i class='bx bx-refresh'></i> Reset</button>
+                        <div class="row-me" id="img-row"></div>
+                     </div>
+                     <div class="submit d-flex">
+                        <button class="btn btn-primary ms-auto" id="submit-new">Save</button>
                      </div>
                   </form>
                </div>

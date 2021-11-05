@@ -47,6 +47,11 @@ class inventory {
          // Insert The new Image In Database
          $this->editImg($id);
 
+      } elseif($action == "add-item") {
+
+         $this->insertNewItem();
+
+
       } else {
          // If user come from external link
          header("location: ../index.php");
@@ -231,13 +236,60 @@ class inventory {
                   <div class='cont' onmouseover='showControl(this)' onmouseout='hideControl(this)'>
                      <div class='cntrl' id='cntrl'>
                         <label for='img" . $key . "' class='edit-btns' onclick='editImg()'><i class='bx bxs-edit-alt'></i></label>
-                        <input type='file' name='img' class='img' id='img" . $key . "'>
+                        <input type='file' name='img' class='img' accept='.png, .jpeg, .jpg' id='img" . $key . "'>
                      </div>
                      <img src='" . $img . "'>
                   </div>
                </div>";
       }
-   }
+   } 
 
+   private function insertNewItem() {
+      $con = $this->conectDataBase();
+         
+      $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+      $desc = filter_var($_POST['desc'], FILTER_SANITIZE_STRING);
+      $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_INT);
+      $que = filter_var($_POST['qua'], FILTER_SANITIZE_NUMBER_INT);
+      $cat = filter_var($_POST['cat'], FILTER_SANITIZE_STRING);
+
+      $errors = array();
+
+      if(empty($name)) {
+         $errors[] = "Please Enter The Name";
+      } elseif (empty($desc)) {
+         $errors[] = "Please Enter Description";
+      } elseif(empty($price)) {
+         $errors[] = "Please Enter Price";
+      } elseif(empty($que)) {
+         $errors[] = "Please Enter Quantity";
+      } elseif ($cat == 'No Select') {
+         $errors[] = "Please Select Category";
+      } elseif (empty($_FILES)) {
+         $errors[] = "Please Select Images";
+      }
+
+      foreach($errors as $error) {
+         echo $error;
+      }
+
+      $imgAr = array();
+
+      if(empty($errors)) {
+         foreach($_FILES as $img) {
+            $img_name = $img['name'];
+            $img_tmp = $img['tmp_name'];
+   
+            $image = rand(0, 100000000) . "_" . $img_name;
+            move_uploaded_file($img_tmp, '..\uploads\\' . $image);
+   
+            $imgAr[] = "uploads/" . $image;
+         }
+   
+         $images = json_encode($imgAr);
+         $stmt = $con->prepare("INSERT INTO items(Name, Description, Price, Images, Quantity, Category) VALUE(?, ?, ?, ?, ?, ?)");
+         $stmt->execute(array($name, $desc, $price, $images, $que, $cat));
+      }
+   }
 }
 ?>

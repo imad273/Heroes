@@ -34,15 +34,6 @@ submit.addEventListener("click", () => {
    }
 })
 
-/* function sayError(msg) {
-   if(msg != null) {
-      alertMsg.style.display = "block";
-      alertMsg.childNodes[1].innerHTML = msg;
-   } else {
-      alertMsg.style.display = "none";
-   }
-} */
-
 function sayError(msg) {
    if (msg != null) {
       alertMsg.style.display = "block";

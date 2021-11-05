@@ -120,6 +120,12 @@ body {
    background-color: #28DBBB;
    border: 1px solid #28DBBB;
 
+   i {
+      position: relative;
+      top: 3px;
+      font-size: 21px;
+   }
+
    &:hover , &:focus, &:active:focus {
       background-color: #23C4A6;
       border-color: #23C4A6;
