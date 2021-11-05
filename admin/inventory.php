@@ -224,7 +224,7 @@
                         </div>
                      </div>
                      <div class="mb-3 add-images">
-                        <input type="file" id="new-img" class="form-control">
+                        <input type="file" id="new-img" class="form-control" accept='.png, .jpeg, .jpg'>
                         <button class="btn btn-success float-end m-2" id="rstBtn"><i class='bx bx-refresh'></i> Reset</button>
                         <div class="row-me" id="img-row"></div>
                      </div>

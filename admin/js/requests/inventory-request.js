@@ -243,18 +243,23 @@ function editImg() {
    }
 }
 
+/*
+   * Add new items Function
+*/
 
 var inputImg = document.getElementById("new-img");
 var rowImg = document.getElementById("img-row");
 var reset = document.getElementById("rstBtn");
-var imgsDetails = Array();
+var imagesArray = Array();
 
-
+// ! I Checked If There Is Search Input Because This File Is Used In More Than Page //
 if(inputImg !== null) {
    inputImg.addEventListener("input", () => {
-      imgsDetails.push(inputImg.files[0]);
-
+      // add Every input in the array
+      imagesArray.push(inputImg.files[0]);
+      // Show The Img Selected To User
       var imgElm = document.createElement("img");
+      // Create A Temporary Url To Show The Image
       var src = URL.createObjectURL(inputImg.files[0]);
       imgElm.setAttribute("src", src);
       imgElm.setAttribute("class", "img-ls");
@@ -264,9 +269,10 @@ if(inputImg !== null) {
    reset.addEventListener("click", () => {
       emtyInputImg();
    })
-   
+
+   // Empty the input field of image and the array when reset the choices
    var emtyInputImg = () => {
-      imgsDetails = Array();
+      imagesArray = Array();
 
       rowImg.innerHTML = "";
 
@@ -288,7 +294,8 @@ if(inputImg !== null) {
 
       form.append("cat", categoryBtn5.attributes[3].value);
 
-      imgsDetails.forEach(function(image, i) {
+      // Set every image has been selected into input to send it 
+      imagesArray.forEach(function(image, i) {
          form.append('imgsDetails_' + i, image);
       });
 
@@ -297,9 +304,10 @@ if(inputImg !== null) {
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
-            console.log(request.responseText);
+            // If success
             if(request.responseText == "") {
                saySuccess("Data Saved");
+               // Empty every input field
                for(let i = 0; i < inputs.length; i++) {
                   inputs[i].value = "";  
                   window.scrollTo(0, 0); 
@@ -307,6 +315,7 @@ if(inputImg !== null) {
                   categoryBtn5.innerHTML = "Select Category";
                }
             } else {
+               // If there is error
                sayError(request.responseText);
                window.scrollTo(0, 0);
             }
