@@ -64,7 +64,7 @@
                               } else {
                                  while($ftc = $stmt->fetch()) {
                                     echo "<tr>
-                                       <th class='text-center'>" . $ftc['Item_ID']  . "</th>
+                                       <th class='id text-center'>" . $ftc['Item_ID']  . "</th>
                                        <td>" . $ftc['Name'] . "</td>
                                        <td>" . $ftc['Category_Name'] . "</td>
                                        <td>" . $ftc['Quantity'] . "</td>

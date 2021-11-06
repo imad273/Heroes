@@ -1,5 +1,5 @@
 * {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 }
 
 .content .header {
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   padding: 15px 30px;
   border-left: 2px solid #2101f8;
   -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -55,16 +55,38 @@ body {
 }
 
 .table thead {
-  background-color: #F8F8F8;
-  border-bottom: 2px solid #ddd;
+  background-color: #F7F7F7;
+}
+
+.table thead tr th {
+  border-bottom: none;
+  padding: .8rem .5rem;
+  color: #222;
+}
+
+.table thead tr th:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.table thead tr th:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .table > :not(:first-child) {
   border-top: none;
 }
 
-.table tr {
+.table tbody .id {
+  font-weight: 500;
+  color: #555;
+}
+
+.table tbody tr {
   vertical-align: baseline;
+  font-size: 15px;
+  color: #000;
 }
 
 .table i {
@@ -250,7 +272,7 @@ body {
 nav {
   position: fixed;
   width: calc(100% - 80%);
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   height: 100%;
 }
 
@@ -309,7 +331,7 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
 }
 
 .login .content-login {
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   width: 50%;
   height: auto;
   border-radius: 10px;
@@ -336,7 +358,7 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
   width: 47%;
   margin: 8px;
   padding: 5px;
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
           box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -421,7 +443,7 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
 .dashboard .chart {
   margin: 18px;
   padding: 10px;
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
           box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -444,7 +466,7 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
 .inventory .inv-form {
   margin: 15px;
   padding: 10px;
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
           box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   border-radius: 10px;
@@ -549,6 +571,20 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
 .inventory .inv-form .add-images .row-me .img-ls {
   width: 48%;
   margin: 5px;
+}
+
+.purchase .pur-table .search .input-group-text {
+  background-color: #4529ff;
+  color: #FFF;
+  border: 1px solid #4529ff;
+  padding: 11px 12px;
+}
+
+.purchase .pur-table .search .form-control {
+  background-color: #FFF;
+  border: 1px solid #d3d3d3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 @media screen and (max-width: 625px) {

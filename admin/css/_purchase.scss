@@ -1,0 +1,18 @@
+.purchase {
+   .pur-table {
+      .search {
+         .input-group-text {
+            background-color: $main;
+            color: $main-light;
+            border: 1px solid $main;
+            padding: 11px 12px;
+         }
+         
+         .form-control {
+            background-color: $main-light;
+            border: 1px solid #d3d3d3;
+            box-shadow: none;
+         }
+      }
+   }
+}
