@@ -232,11 +232,11 @@ class inventory {
       $index = 0;
       foreach($new_images as $img) {
          $key = $index++;
-         echo "<div class'col-md-4'>
+         echo "<div class='blk'>
                   <div class='cont' onmouseover='showControl(this)' onmouseout='hideControl(this)'>
                      <div class='cntrl' id='cntrl'>
                         <label for='img" . $key . "' class='edit-btns' onclick='editImg()'><i class='bx bxs-edit-alt'></i></label>
-                        <input type='file' name='img' class='img' accept='.png, .jpeg, .jpg' id='img" . $key . "'>
+                        <input type='file' name='img' accept='.png, .jpeg, .jpg' class='img' id='img" . $key . "'>
                      </div>
                      <img src='" . $img . "'>
                   </div>

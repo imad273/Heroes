@@ -61,14 +61,14 @@
                   opacity: 0;
                   transition: .3s;
                   
-   
+
                   [type="file"] {
                      clip: rect(0, 0, 0, 0);
                      overflow: hidden;
                      position: absolute !important;
                      width: 0px;
                   }
-   
+
                   label {
                      padding: 6px 12px;
                      border-radius: 50%;
@@ -77,12 +77,12 @@
                      font-size: 24px;
                      cursor: pointer;
                      transition: .3s;
-   
+
                      i {
                         position: relative;
                         top: 1px;
                      }
-   
+
                      &:hover {
                         background-color: #13b4b4;
                      }
