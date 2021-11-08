@@ -36,7 +36,7 @@ function formateDate($curDate, $time = false) {
    return $ftc['date'];
 }
 
-/* Get Data From Database */
+/* Get Data From Category Table */
 function getCategoryData() {
    $cls = new DataBase();
    $con = $cls->_connect();
@@ -46,6 +46,7 @@ function getCategoryData() {
    return $stmt;
 }
 
+/* Get Data From Users Table */
 function getUsersData() {
    $cls = new DataBase();
    $con = $cls->_connect();
@@ -55,6 +56,7 @@ function getUsersData() {
    return $stmt;
 }
 
+/* Get Data From Massages Table */
 function getMessages() {
    $cls = new DataBase();
    $con = $cls->_connect();
