@@ -18,7 +18,7 @@
          <a href="purchase.php" class="nav-link <?php setActiveClass("Purchase") ?>"><i class='bx bxs-cart-alt'></i> Purchase</a>
          <a href="customers.php" class="nav-link <?php setActiveClass("Customers") ?>"><i class='bx bxs-user-detail'></i> Customers</a>
          <a href="messages.php" class="nav-link <?php setActiveClass("Messages") ?>"><i class='bx bxs-envelope'></i> Messages</a>
-         <a href="#" class="nav-link <?php setActiveClass("Settings") ?>"><i class='bx bxs-cog'></i> Settings</a>
+         <a href="settings.php" class="nav-link <?php setActiveClass("Settings") ?>"><i class='bx bxs-cog'></i> Settings</a>
       </div>
    </div>
 </nav>
