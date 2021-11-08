@@ -601,6 +601,50 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
           box-shadow: none;
 }
 
+.msgs .msgs-con {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.msgs .msgs-con .dropdown-divider {
+  margin: 0px;
+}
+
+.msgs .msgs-con .msg .msg-info {
+  width: 100%;
+  padding: 10px;
+}
+
+.msgs .msgs-con .msg .msg-info img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 8px;
+}
+
+.msgs .msgs-con .msg .msg-info .usr-det {
+  width: 85%;
+  padding: 10px;
+}
+
+.msgs .msgs-con .msg .msg-info .usr-det p {
+  width: 100%;
+  color: #444;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0px;
+}
+
+.msgs .msgs-con .msg .msg-info .usr-det span {
+  color: #555;
+  font-size: 13px;
+}
+
 @media screen and (max-width: 625px) {
   .login .content {
     width: 80%;

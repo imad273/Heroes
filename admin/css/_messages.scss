@@ -1,0 +1,50 @@
+.msgs {
+   .msgs-con {
+      box-shadow: $border;
+      background-color: $second-light;
+      border-radius: 5px;
+      margin: 15px;
+      
+      .dropdown-divider {
+         margin: 0px;
+      }
+
+      .msg {
+         .msg-info {
+            width: 100%;
+            padding: 10px;
+
+            img {
+               border-radius: 50%;
+               width: 60px;
+               height: 60px;
+               margin-right: 8px;
+            }
+
+            .usr-det {
+               width: 85%;
+               padding: 10px;
+
+               p {
+                  width: 100%;
+                  color: #444;
+                  font-size: 15px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  margin-bottom: 0px;
+               }
+
+               span {
+                  color: #555;
+                  font-size: 13px;
+               }
+            }
+
+            
+         }
+         
+         
+      }
+   }
+}
