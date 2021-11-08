@@ -618,15 +618,8 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
   padding: 10px;
 }
 
-.msgs .msgs-con .msg .msg-info img {
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  margin-right: 8px;
-}
-
 .msgs .msgs-con .msg .msg-info .usr-det {
-  width: 85%;
+  width: 90%;
   padding: 10px;
 }
 

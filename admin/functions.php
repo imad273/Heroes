@@ -20,10 +20,17 @@ function setActiveClass($link) {
    }
 }
 
-function formateDate($curDate) {
+function formateDate($curDate, $time = false) {
    $cls = new DataBase();
    $con = $cls->_connect();
-   $date = $con->prepare("SELECT DATE_FORMAT('$curDate', '%b %D, %Y') AS date");
+
+   if($time = true) {
+      $time = '%k:%i%p';
+   } else {
+      $time = "";
+   }
+
+   $date = $con->prepare("SELECT DATE_FORMAT('$curDate', '%b %D, %Y $time') AS date");
    $date->execute();
    $ftc = $date->fetch();
    return $ftc['date'];
@@ -48,4 +55,12 @@ function getUsersData() {
    return $stmt;
 }
 
+function getMessages() {
+   $cls = new DataBase();
+   $con = $cls->_connect();
+
+   $stmt = $con->prepare("SELECT * FROM messages");
+   $stmt->execute();
+   return $stmt;
+}
 ?>
