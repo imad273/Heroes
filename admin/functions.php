@@ -59,7 +59,7 @@ function getMessages() {
    $cls = new DataBase();
    $con = $cls->_connect();
 
-   $stmt = $con->prepare("SELECT * FROM messages");
+   $stmt = $con->prepare("SELECT * FROM messages ORDER BY Msg_id DESC");
    $stmt->execute();
    return $stmt;
 }
