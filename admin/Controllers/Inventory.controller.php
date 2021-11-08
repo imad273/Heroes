@@ -26,7 +26,7 @@ class inventory {
          $itemId = $_POST['itemId'];
 
          // Delete Function
-         $this->DeleteFromInve($itemId);
+         $this->deleteFromInve($itemId);
 
          // Get The New Data from Database
          $stmt = $this->getInventoryData();
@@ -151,7 +151,7 @@ class inventory {
    }
 
    // Delete Item From Database
-   private function DeleteFromInve($id) {
+   private function deleteFromInve($id) {
       $con = $this->conectDataBase();
    
       $stmt = $con->prepare("DELETE FROM items WHERE Item_ID = '$id'");

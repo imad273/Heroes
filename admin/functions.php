@@ -20,18 +20,32 @@ function setActiveClass($link) {
    }
 }
 
+function formateDate($curDate) {
+   $cls = new DataBase();
+   $con = $cls->_connect();
+   $date = $con->prepare("SELECT DATE_FORMAT('$curDate', '%b %D, %Y') AS date");
+   $date->execute();
+   $ftc = $date->fetch();
+   return $ftc['date'];
+}
+
 /* Get Data From Database */
-function getData($table) {
+function getCategoryData() {
    $cls = new DataBase();
    $con = $cls->_connect();
 
-   $stmt = $con->prepare("SELECT * FROM $table");
+   $stmt = $con->prepare("SELECT * FROM categories");
    $stmt->execute();
    return $stmt;
 }
 
+function getUsersData() {
+   $cls = new DataBase();
+   $con = $cls->_connect();
 
-
-
+   $stmt = $con->prepare("SELECT * FROM Users WHERE GroupID = 0");
+   $stmt->execute();
+   return $stmt;
+}
 
 ?>

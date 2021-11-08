@@ -18,7 +18,7 @@ submit.addEventListener("click", () => {
          form.append(fields[i].name, fields[i].value);
       }
 
-      request.open("POST", "././Controllers/LoginControl.php", true);
+      request.open("POST", "././Controllers/Login.controller.php");
       submit.innerHTML = "<i class='bx bx-loader bx-spin' ></i>";
       request.onreadystatechange = () => {
          if(request.readyState === 4 && request.status === 200) {

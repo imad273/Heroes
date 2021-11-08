@@ -57,6 +57,7 @@ body {
       background-color: $second-light;
 
       tr {
+         vertical-align: middle;
 
          th {
             border-bottom: none;
@@ -87,7 +88,7 @@ body {
          color: #555;
       }
       tr {
-         vertical-align: baseline;
+         vertical-align: middle;
          font-size: 15px;
          color: #000;
       }
@@ -236,6 +237,7 @@ body {
 
 @import "purchase";
 
+@import "customers";
 
 
 

@@ -39,7 +39,7 @@ for (var i = 0; i < categories.length; i++) {
       form.append("cat_id", categoryId);
       
       // Open http request
-      request.open("POST", "././Controllers/InventoryControl.php?action=category");
+      request.open("POST", "././Controllers/Inventory.controller.php?action=category");
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
@@ -78,7 +78,7 @@ if (searchField != null) {
       form.append("keyword", searchField.value);
 
       // Open http request
-      request.open("POST", "././Controllers/InventoryControl.php?action=search");
+      request.open("POST", "././Controllers/Inventory.controller.php?action=search");
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
@@ -114,7 +114,7 @@ function deleteItem(id) {
       form.append("itemId", itemId);
 
       // Open http request
-      request.open("POST", "././Controllers/InventoryControl.php?action=delete");
+      request.open("POST", "././Controllers/Inventory.controller.php?action=delete");
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
@@ -178,7 +178,7 @@ if (saveBtn !== null) {
       form.append("id", params.id);
 
       // Open http request
-      request.open("POST", "././Controllers/InventoryControl.php?action=edit");
+      request.open("POST", "././Controllers/Inventory.controller.php?action=edit");
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
@@ -229,7 +229,7 @@ function editImg() {
          form.append("id", params.id);
 
          // Open http request
-         request.open("POST", "././Controllers/InventoryControl.php?action=edit-img");
+         request.open("POST", "././Controllers/Inventory.controller.php?action=edit-img");
 
          request.onreadystatechange = () => {
             if (request.readyState === 4 && request.status === 200) {
@@ -300,7 +300,7 @@ if(inputImg !== null) {
       });
 
       // Open http request
-      request.open("POST", "././Controllers/InventoryControl.php?action=add-item");
+      request.open("POST", "././Controllers/Inventory.controller.php?action=add-item");
 
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {

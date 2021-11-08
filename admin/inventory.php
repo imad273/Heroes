@@ -28,7 +28,7 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuBtn">
                            <li data="0" class="dropdown-item cats">All</li>
                         <?php
-                           $stmt = getData("categories");
+                           $stmt = getCategoryData();
                            while($ftc = $stmt->fetch()) {
                               echo "<li data='" . $ftc["cat_ID"] . "' class='dropdown-item cats'>" . $ftc["Name"] . "</li>";
                            }   ?>
@@ -139,7 +139,7 @@
                            </button>
                            <ul class="dropdown-menu w-100" aria-labelledby="catBtn">
                            <?php
-                              $stmtCat = getData("categories");
+                              $stmtCat = getCategoryData();
                               while($ftcCat = $stmtCat->fetch()) {
                                  echo "<li data='" . $ftcCat["cat_ID"] . "' class='dropdown-item cats-edit'>" . $ftcCat["Name"] . "</li>";
                               }  ?>
@@ -216,7 +216,7 @@
                            </button>
                            <ul class="dropdown-menu w-100" aria-labelledby="catBtn">
                            <?php
-                              $stmtCat = getData("categories");
+                              $stmtCat = getCategoryData();
                               while($ftcCat = $stmtCat->fetch()) {
                                  echo "<li data='" . $ftcCat["cat_ID"] . "' class='dropdown-item cats-edit'>" . $ftcCat["Name"] . "</li>";
                               }  ?>
