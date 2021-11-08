@@ -48,18 +48,6 @@
                            <hr class='dropdown-divider'>";
                   }
                ?>
-               <!-- <div class="msg">
-                  <div class="msg-info d-flex align-items-center">
-                     
-                     <div class="usr-det">
-                        <h5>Liam Kittilsen</h5>
-                        <p>Lorem ipsum dolor sit amet consectetu ssimus culpa laborum voluptates, sit maxime tempora pariatur? Placeat sunt nulla, suscipit assumenda repellat inventore repellendus! Porro in sed repellendus vel quis facere nobis?</p>
-                        <span>5 min ago</span>
-                     </div>
-                  </div>
-               </div> -->
-                  <!-- <hr class="dropdown-divider"> -->
-               
             </div>
          </div>
       </section>
