@@ -10,3 +10,15 @@ function showControl(elm) {
 function hideControl(elm) {
    elm.children[0].style.opacity = "0";
 }
+
+
+let openMenuBtn = document.getElementById("menu-btn");
+let nav = document.getElementById("nav");
+let exit = document.getElementById("exit");
+
+openMenuBtn.addEventListener("click", () => {
+   nav.style.transform = "translateX(0%)";
+})
+exit.addEventListener("click", () => {
+   nav.style.transform = "translateX(100%)";
+})

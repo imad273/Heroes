@@ -23,6 +23,14 @@ body {
       padding: 15px 30px;
       border-left: 2px solid $main-hover;
       box-shadow: $border;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .open-menu {
+         font-size: 20px;
+         display: none;
+      }
       
       .tit {
          display: flex;
@@ -238,19 +246,40 @@ body {
 
 
 
-@media screen and (max-width: 625px){
+@media screen and (max-width: 625px) {
    .login {
       .content {
          width: 80%;
       }
    }
+   .content {
+      width: 100%;
+
+      .header {
+         .open-menu {
+            display: block;
+         }
+      }
+   }
+
    nav {
+      width: 100%;
+      transform: translateX(100%);
+      z-index: 111111;
+      transition: 1s;
+      transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+      
       .cont-nav {
          .brand {
-            img {
-               height: 100px;
-            }
+            margin-top: 8%;
          }
+         .links {
+            margin: auto;
+            margin-top: 10%;
+         }
+      }
+      #exit {
+         display: block;
       }
       
    }
@@ -280,5 +309,10 @@ body {
             } 
          }
       }
+   }
+
+   
+   .control {
+      justify-content: center !important;
    }
 }

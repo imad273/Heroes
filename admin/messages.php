@@ -17,6 +17,9 @@
                      <i class='bx bxs-cube'></i>
                      <span> Messages</span>
                   </div>
+                  <div class="open-menu">
+                     <i id='menu-btn' class='bx bx-menu-alt-right'></i>
+                  </div>
                </div>
                <div class="msgs-con">
                   <?php
@@ -68,7 +71,10 @@
                <div class="header">
                   <div class="tit">
                      <i class='bx bxs-cube'></i>
-                     <span> Messages</span>
+                     <span><?php echo $ftc['Name'] ?> Message</span>
+                  </div>
+                  <div class="open-menu">
+                     <i id='menu-btn' class='bx bx-menu-alt-right'></i>
                   </div>
                </div>
                <div class="msgs-con">

@@ -16,6 +16,9 @@ if(isset($_SESSION["admin_login"])) { ?>
                <i class='bx bxs-dashboard'></i>
                <span> Dashboard</span>
             </div>
+            <div class="open-menu">
+               <i id='menu-btn' class='bx bx-menu-alt-right'></i>
+            </div>
          </div>
          <div class="overview pt-2 d-flex justify-content-center flex-wrap">
             <div class="tab">

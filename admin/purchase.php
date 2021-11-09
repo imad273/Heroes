@@ -63,7 +63,6 @@
                            <td>04 OCT 2021 13:44</td>
                            <td>$70,00</td>
                         </tr>
-
                      </tbody>
                   </table>
                </div>

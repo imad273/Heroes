@@ -1,4 +1,5 @@
-<nav>
+<nav id='nav'>
+   <i id="exit" class='bx bxs-exit' ></i>
    <div class="cont-nav d-flex flex-column">
       <div class="brand">
          <img src="images/logo.png" alt="LOGO">

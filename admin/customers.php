@@ -16,6 +16,9 @@
                   <i class='bx bxs-cube'></i>
                   <span> Customers</span>
                </div>
+               <div class="open-menu">
+                  <i id='menu-btn' class='bx bx-menu-alt-right'></i>
+               </div>
             </div>
             <div class="cus-table m-2">
                <div class="control p-2 d-flex flex-row-reverse">

@@ -19,6 +19,20 @@ body {
   border-left: 2px solid #2101f8;
   -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
           box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .header .open-menu {
+  font-size: 20px;
+  display: none;
 }
 
 .content .header .tit {
@@ -280,6 +294,14 @@ nav {
   height: 100%;
 }
 
+nav #exit {
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  right: 30px;
+  top: 20px;
+}
+
 nav .cont-nav {
   padding: 10px;
 }
@@ -294,7 +316,7 @@ nav .cont-nav .brand img {
 }
 
 nav .cont-nav .links {
-  margin-top: 15%;
+  margin-top: 20%;
 }
 
 nav .cont-nav .links .nav-link {
@@ -675,8 +697,31 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
   .login .content {
     width: 80%;
   }
-  nav .cont-nav .brand img {
-    height: 100px;
+  .content {
+    width: 100%;
+  }
+  .content .header .open-menu {
+    display: block;
+  }
+  nav {
+    width: 100%;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    z-index: 111111;
+    -webkit-transition: 1s;
+    transition: 1s;
+    -webkit-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  nav .cont-nav .brand {
+    margin-top: 8%;
+  }
+  nav .cont-nav .links {
+    margin: auto;
+    margin-top: 10%;
+  }
+  nav #exit {
+    display: block;
   }
   .dashboard .overview .tab {
     width: 100%;
@@ -690,6 +735,11 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
   }
   .inventory .edit-form .edit-img .row > * .cont img {
     height: 200px;
+  }
+  .control {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
