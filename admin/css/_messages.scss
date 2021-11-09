@@ -10,6 +10,10 @@
       }
 
       .msg {
+         a {
+            text-decoration: none;
+            color: #000;
+         }
          .msg-info {
             width: 100%;
             padding: 10px;
@@ -28,11 +32,39 @@
                   margin-bottom: 0px;
                }
 
+               label {
+                  display: block;
+                  font-weight: 500;
+                  margin: 8px 0px;
+                  font-size: 15px;
+               }
+
                span {
                   color: #555;
                   font-size: 13px;
                }
             }
+         }
+      }
+
+      .show-mgs {
+         padding: 15px;
+
+         span {
+            font-size: 13px;
+            color: #555;
+         }
+         
+         label {
+            display: block;
+            font-weight: 500;
+            margin: 8px 0px;
+            font-size: 15px;
+         }
+
+         p {
+            margin-top: 10px;
+            color: #333;
          }
       }
    }

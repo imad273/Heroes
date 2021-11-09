@@ -613,6 +613,11 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
   margin: 0px;
 }
 
+.msgs .msgs-con .msg a {
+  text-decoration: none;
+  color: #000;
+}
+
 .msgs .msgs-con .msg .msg-info {
   width: 100%;
   padding: 10px;
@@ -633,9 +638,37 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
   margin-bottom: 0px;
 }
 
+.msgs .msgs-con .msg .msg-info .usr-det label {
+  display: block;
+  font-weight: 500;
+  margin: 8px 0px;
+  font-size: 15px;
+}
+
 .msgs .msgs-con .msg .msg-info .usr-det span {
   color: #555;
   font-size: 13px;
+}
+
+.msgs .msgs-con .show-mgs {
+  padding: 15px;
+}
+
+.msgs .msgs-con .show-mgs span {
+  font-size: 13px;
+  color: #555;
+}
+
+.msgs .msgs-con .show-mgs label {
+  display: block;
+  font-weight: 500;
+  margin: 8px 0px;
+  font-size: 15px;
+}
+
+.msgs .msgs-con .show-mgs p {
+  margin-top: 10px;
+  color: #333;
 }
 
 @media screen and (max-width: 625px) {
