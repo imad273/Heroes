@@ -65,4 +65,25 @@ function getMessages() {
    $stmt->execute();
    return $stmt;
 }
+
+function CountRows($column, $table){
+   $cls = new DataBase();
+   $con = $cls->_connect();
+
+   $stmt = $con->prepare("SELECT COUNT($column) FROM $table");
+   $stmt->execute();
+   $ftc = $stmt->fetchColumn();
+   return $ftc;
+}
+
+function SumRows($column, $table){
+   $cls = new DataBase();
+   $con = $cls->_connect();
+
+   $stmt = $con->prepare("SELECT SUM($column) FROM $table");
+   $stmt->execute();
+   $ftc = $stmt->fetchColumn();
+   return $ftc;
+}
+
 ?>

@@ -366,12 +366,11 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
 }
 
 .login .content-login .logo {
-  padding: 20px 0px;
+  padding: 20px 10px;
 }
 
 .login .content-login .logo img {
-  width: 230px;
-  height: 230px;
+  width: 100%;
 }
 
 .dashboard .overview {
@@ -695,7 +694,7 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
 }
 
 @media screen and (max-width: 625px) {
-  .login .content {
+  .login .content-login {
     width: 80%;
   }
   .content {

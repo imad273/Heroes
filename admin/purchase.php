@@ -27,7 +27,7 @@
                   </div>
                </div>
                <div class="table-responsive">
-                  <table class="table">
+                  <table class="table"> 
                      <thead>
                         <tr>
                            <th>Customer</th>
@@ -39,30 +39,26 @@
                         </tr>
                      </thead>
                      <tbody id="tbody">
-                        <tr>
-                           <td>Laurin Michel</td>
-                           <td>Nedrow, NY, United States</td>
-                           <td>MuscleTech Nitro-Tech</td>
-                           <td>2</td>
-                           <td>04 OCT 2021 13:44</td>
-                           <td>$120,00</td>
-                        </tr>
-                        <tr>
-                           <td>Adam dgorge</td>
-                           <td>Guandi, China</td>
-                           <td>Life Fitness Studio Deck</td>
-                           <td>1</td>
-                           <td>02 OCT 2021 16:26</td>
-                           <td>$240,00</td>
-                        </tr>
-                        <tr>
-                           <td>Laurin Michel</td>
-                           <td>Nedrow, NY, United States</td>
-                           <td>Hammer Strength Round Urethane Dumbbells 35g</td>
-                           <td>2</td>
-                           <td>04 OCT 2021 13:44</td>
-                           <td>$70,00</td>
-                        </tr>
+                        <?php
+                           $cls = new DataBase();
+                           $con = $cls->_connect();
+                           $stmt = $con->prepare("SELECT * FROM purchase ORDER BY pur_id DESC");
+                           $stmt->execute();
+
+                           if($stmt->rowCount() == 0) {
+                              echo "<th colspan='5' class='text-center align-middle'><i class='bx bxs-info-circle bx-tada' style='color: #47E6F6; font-size: 32px'></i><p>No Items To Show</p></th>";
+                           } else {
+                              while($ftc = $stmt->fetch()) {
+                                 echo "<tr>
+                                          <td>". $ftc['Customer_name'] ."</td>
+                                          <td>". $ftc['Locality'] ."</td>
+                                          <td>". $ftc['Product_name'] ."</td>
+                                          <td>". $ftc['Quantity'] ."</td>
+                                          <td>". $ftc['Date'] ."</td>
+                                          <td>$". $ftc['Cost'] ."</td>
+                                       </tr>";
+                              }
+                           } ?>
                      </tbody>
                   </table>
                </div>

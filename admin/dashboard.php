@@ -32,14 +32,14 @@ if(isset($_SESSION["admin_login"])) { ?>
                      <i class='bx bxs-purchase-tag'></i>
                      <div class="res">
                         <p>Total Sales</p>
-                        <span>786</span>
+                        <span><?php echo CountRows("Pur_id", "purchase") ?></span>
                      </div>
                   </div>
                   <div class="itm">
                      <i class='bx bxs-badge-dollar'></i>
                      <div class="res">
                         <p>Total Product</p>
-                        <span>12487</span>
+                        <span><?php echo CountRows("Item_ID", "items") ?></span>
                      </div>
                   </div>
                </div>
@@ -70,14 +70,14 @@ if(isset($_SESSION["admin_login"])) { ?>
                      <i class='bx bxs-user-detail'></i> 
                      <div class="res">
                         <p>Total Users</p>
-                        <span>786</span>
+                        <span><?php echo CountRows("User_id", "users") ?></span>
                      </div>
                   </div>
                   <div class="itm">
                      <i class='bx bxs-badge-dollar'></i>
                      <div class="res">
                         <p>Cost</p>
-                        <span>12487</span>
+                        <span>$<?php echo SumRows("Cost", "purchase") ?></span>
                      </div>
                   </div>
                </div>
@@ -93,7 +93,7 @@ if(isset($_SESSION["admin_login"])) { ?>
                      <i class='bx bxs-envelope'></i>
                      <div class="res">
                         <p>Messages</p>
-                        <span>5077</span>
+                        <span><?php echo CountRows("Msg_id", "messages") ?></span>
                      </div>
                   </div>
                </div>

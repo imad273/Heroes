@@ -16,9 +16,11 @@ let openMenuBtn = document.getElementById("menu-btn");
 let nav = document.getElementById("nav");
 let exit = document.getElementById("exit");
 
-openMenuBtn.addEventListener("click", () => {
-   nav.style.transform = "translateX(0%)";
-})
-exit.addEventListener("click", () => {
-   nav.style.transform = "translateX(100%)";
-})
+if(openMenuBtn !== null) {
+   openMenuBtn.addEventListener("click", () => {
+      nav.style.transform = "translateX(0%)";
+   })
+   exit.addEventListener("click", () => {
+      nav.style.transform = "translateX(100%)";
+   })
+}
