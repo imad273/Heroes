@@ -294,19 +294,14 @@ body {
    }
 
    .inventory {
-      .edit-form {
-         .edit-img {
-            .row>* {
-               flex-shrink: 1;
-               
-               .cont {
-                  width: 100%;
-
-                  img {
-                     height: 200px;
-                  }
-               } 
-            } 
+      .inv-form {
+         .add-images {
+            .row-me {
+               justify-content: center;
+               .img-ls {
+                  width: 47%;
+               }
+            }
          }
       }
    }

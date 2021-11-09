@@ -296,6 +296,7 @@ nav {
 
 nav #exit {
   display: none;
+  color: #4529ff;
   position: absolute;
   font-size: 20px;
   right: 30px;
@@ -726,15 +727,13 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
   .dashboard .overview .tab {
     width: 100%;
   }
-  .inventory .edit-form .edit-img .row > * {
-    -ms-flex-negative: 1;
-        flex-shrink: 1;
+  .inventory .inv-form .add-images .row-me {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  .inventory .edit-form .edit-img .row > * .cont {
-    width: 100%;
-  }
-  .inventory .edit-form .edit-img .row > * .cont img {
-    height: 200px;
+  .inventory .inv-form .add-images .row-me .img-ls {
+    width: 47%;
   }
   .control {
     -webkit-box-pack: center !important;
