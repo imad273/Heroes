@@ -51,7 +51,6 @@ class inventory {
 
          $this->insertNewItem();
 
-
       } else {
          // If user come from external link
          header("location: ../index.php");

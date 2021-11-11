@@ -83,10 +83,10 @@ if(isset($_SESSION["admin_login"])) { ?>
                </div>
                <div class="row-m d-flex">
                   <div class="itm">
-                     <i class='bx bxs-star'></i>
+                     <i class='bx bxs-cart-alt'></i>
                      <div class="res">
-                        <p>Reviews</p>
-                        <span>17565</span>
+                        <p>Purchase</p>
+                        <span><?php echo CountRows("Pur_id", "purchase") ?></span>
                      </div>
                   </div>
                   <div class="itm">

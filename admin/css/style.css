@@ -693,6 +693,48 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
   color: #333;
 }
 
+.category .note {
+  margin: 15px;
+  background-color: #28DBBB;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.category .note .icn {
+  font-size: 36px;
+}
+
+.category .note .con {
+  padding-left: 10px;
+}
+
+.category .note .con span {
+  font-weight: bold;
+}
+
+.category .note .con p {
+  margin-bottom: 0px;
+}
+
+.category .cat-form {
+  margin: 15px;
+  padding: 10px;
+  background-color: #F7F7F7;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 10px;
+}
+
+.stg .set-con {
+  margin: 15px;
+  padding: 10px;
+  background-color: #F7F7F7;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 625px) {
   .login .content-login {
     width: 80%;

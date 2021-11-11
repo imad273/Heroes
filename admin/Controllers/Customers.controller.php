@@ -2,9 +2,9 @@
 
 include "../functions.php";
 
-$autoLoad = new inventory();
+$autoLoad = new Cusmtomers();
 
-class inventory {
+class Cusmtomers {
 
    public function __construct() {
       $action = isset($_GET["action"]) ? $_GET["action"] : header("location: ../index.php");;

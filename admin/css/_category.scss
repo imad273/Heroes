@@ -1,0 +1,32 @@
+.category {
+   .note {
+      margin: 15px;
+      background-color: #28DBBB;
+      color: $main-light;
+      padding: 10px;
+      border-radius: 10px;
+
+      .icn {
+         font-size: 36px;
+      }
+
+      .con {
+         padding-left: 10px;
+         
+         span {
+            font-weight: bold;
+         }
+         p {
+            margin-bottom: 0px;
+         }
+      }
+   }
+   
+   .cat-form {
+      margin: 15px;
+      padding: 10px;
+      background-color: $second-light;
+      box-shadow: $border;
+      border-radius: 10px;
+   }
+}

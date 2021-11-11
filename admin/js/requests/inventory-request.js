@@ -79,7 +79,7 @@ if (searchField != null) {
 
       // Open http request
       request.open("POST", "././Controllers/Inventory.controller.php?action=search");
-
+      
       request.onreadystatechange = () => {
          if (request.readyState === 4 && request.status === 200) {
             // Output The Response In The Table

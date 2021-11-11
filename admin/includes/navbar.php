@@ -11,9 +11,11 @@
                <i class='bx bxs-cube'></i> Inventory
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <li><a class="dropdown-item" href="inventory.php">View All Items</a></li>
+               <li><a class="dropdown-item" href="inventory.php">View Items</a></li>
+               <li><a class="dropdown-item" href="category.php">Categories</a></li>
                <li><hr class="dropdown-divider"></li>
-               <li><a class="dropdown-item" href="inventory.php?action=add-items">Add items</a></li>
+               <li><a class="dropdown-item" href="inventory.php?action=add-items">Add Items</a></li>
+               <li><a class="dropdown-item" href="category.php?action=add-category">Add Category</a></li>
             </ul>
          </li>
          <a href="purchase.php" class="nav-link <?php setActiveClass("Purchase") ?>"><i class='bx bxs-cart-alt'></i> Purchase</a>
