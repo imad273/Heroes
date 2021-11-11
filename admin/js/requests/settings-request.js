@@ -20,10 +20,10 @@ function saySuccess(msg) {
    }
 }
 
-
 var saveBtn = document.getElementById("submit-new");
 var inputs = document.getElementsByClassName("edit-input");
 
+// ! I Checked If There Is Search Input Because This File Is Used In More Than Page //
 if(saveBtn !== null) {
    saveBtn.addEventListener("click", () => {
       let request = new XMLHttpRequest();
@@ -53,6 +53,7 @@ if(saveBtn !== null) {
 var saveBtn2 = document.getElementById("submit-new-pass");
 var pasInputs = document.getElementsByClassName("pass-input");
 
+// ! I Checked If There Is Search Input Because This File Is Used In More Than Page //
 if(saveBtn2 !== null) {
    saveBtn2.addEventListener("click", () => {
 

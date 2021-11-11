@@ -56,7 +56,7 @@
                   </form>
                </div>
                <div class="set-con d-flex justify-content">
-                  <a href="#" class="btn btn-danger w-25 m-auto">Logout</a>
+                  <a href="logout.php" class="btn btn-danger w-25 m-auto">Logout</a>
                </div>
             </div>
          </section>

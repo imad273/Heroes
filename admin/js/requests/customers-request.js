@@ -1,4 +1,3 @@
-
 /*
    * Search Function 
 */
@@ -28,6 +27,10 @@ if (searchField != null) {
       request.send(form);
    })
 }
+
+/*
+   * Delete Function 
+*/
 
 function deleteUser(id) {
    var alertMsg = document.getElementById("conf-alert");

@@ -61,6 +61,10 @@ function deleteCategory(id) {
    }) 
 }
 
+/*
+   * Add New Category
+*/
+
 var saveBtn = document.getElementById("submit-new");
 var input = document.getElementById("add-input");
 
@@ -72,7 +76,6 @@ if(saveBtn !== null) {
 
       form.append("catName", input.value);
       
-
       // Open http request
       request.open("POST", "././Controllers/Category.controller.php?action=add-category");
 
