@@ -22,9 +22,8 @@ if(isset($_SESSION["admin_login"])) { ?>
          </div>
          <div class="overview pt-2 d-flex justify-content-center flex-wrap">
             <div class="tab">
-               <div class="header-tab p-2 d-flex justify-content-between align-items-center">
+               <div class="header-tab p-2">
                   <h4>Sales Overview</h4>
-                  <i class='bx bx-dots-vertical-rounded'></i>
                </div>
                
                <div class="row-m d-flex">
@@ -61,9 +60,8 @@ if(isset($_SESSION["admin_login"])) { ?>
                </div>
             </div>
             <div class="tab">
-               <div class="header-tab p-2 d-flex justify-content-between align-items-center">
+               <div class="header-tab p-2">
                   <h4>Customers Overview</h4>
-                  <i class='bx bx-dots-vertical-rounded'></i>
                </div>
                <div class="row-m d-flex">
                   <div class="itm">

@@ -68,6 +68,7 @@ function deleteCategory(id) {
 var saveBtn = document.getElementById("submit-new");
 var input = document.getElementById("add-input");
 
+// ! I Checked If There Is Search Input Because This File Is Used In More Than Page //
 if(saveBtn !== null) {
    saveBtn.addEventListener("click", () => {
 

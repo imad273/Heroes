@@ -381,17 +381,12 @@ nav .cont-nav .links .nav-link:hover, nav .cont-nav .links .nav-link:hover > i {
 
 .dashboard .overview .tab {
   width: 47%;
-  margin: 8px;
+  margin: 10px;
   padding: 5px;
   background-color: #F7F7F7;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
           box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-
-.dashboard .overview .tab .header-tab i {
-  font-size: 19px;
-  cursor: pointer;
 }
 
 .dashboard .overview .tab .itm {
