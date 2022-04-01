@@ -18,7 +18,7 @@ class login {
    }
 
    public function checkExist($con, $username, $password) {
-      $stmt = $con->prepare("SELECT * FROM users WHERE UserName = '$username' AND GroupID = 1");
+      $stmt = $con->prepare("SELECT * FROM users WHERE UserName = '$username' AND isAdmin = 1");
       $stmt->execute();
       $ftc = $stmt->fetch();
       if($stmt->rowCount() > 0) {

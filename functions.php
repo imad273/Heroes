@@ -51,7 +51,7 @@ function getUsersData() {
    $cls = new DataBase();
    $con = $cls->_connect();
 
-   $stmt = $con->prepare("SELECT * FROM Users WHERE GroupID = 0");
+   $stmt = $con->prepare("SELECT * FROM Users WHERE isAdmin = 0");
    $stmt->execute();
    return $stmt;
 }

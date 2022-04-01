@@ -12,7 +12,6 @@ submit.addEventListener("click", () => {
       
       let request = new XMLHttpRequest();
 
-
       for (let i = 0; i < fields.length; i++) {
          // Set each input value into the Form
          form.append(fields[i].name, fields[i].value);

@@ -59,7 +59,7 @@ class Cusmtomers {
    private function getCustomersData() {
       $con = $this->conectDataBase();
 
-      $stmt = $con->prepare("SELECT * FROM users WHERE GroupID  = 0");
+      $stmt = $con->prepare("SELECT * FROM users WHERE isAdmin = 0");
       $stmt->execute();
       
       if($stmt->rowCount() == 0) {
