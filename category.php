@@ -2,7 +2,6 @@
    session_start();
    // Title
    $title = "Inventory";
-
    
    require "functions.php";
    include "includes/head.php";
@@ -52,7 +51,7 @@
                               echo "<th colspan='5' class='text-center align-middle'><i class='bx bxs-info-circle bx-tada' style='color: #47E6F6; font-size: 32px'></i><p>No Items To Show</p></th>";
                            } else {
                               while($ftc = $stmt->fetch()) {
-                                 $id = $ftc['cat_ID'];
+                                 $id = $ftc['Cat_id'];
                                  $stmt2 = $con->prepare("SELECT COUNT(Item_ID) FROM items WHERE Category = '$id'");
                                  $stmt2->execute();
                                  $ftc2 = $stmt2->fetchColumn();

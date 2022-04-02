@@ -5,7 +5,6 @@ include "../functions.php";
 $autoLoad = new Category();
 
 class Category {
-
    public function __construct() {
       $action = isset($_GET["action"]) ? $_GET["action"] : header("location: ../index.php");;
       if($action == "delete") {
@@ -54,7 +53,7 @@ class Category {
    private function deleteFromCat($id) {
       $con = $this->conectDataBase();
    
-      $stmt = $con->prepare("DELETE FROM categories WHERE Cat_ID = '$id'");
+      $stmt = $con->prepare("DELETE FROM categories WHERE Cat_id = '$id'");
       $stmt->execute();
 
       return $stmt;

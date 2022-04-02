@@ -33,7 +33,7 @@
                         <?php
                            $stmt = getCategoryData();
                            while($ftc = $stmt->fetch()) {
-                              echo "<li data='" . $ftc["cat_ID"] . "' class='dropdown-item cats'>" . $ftc["Name"] . "</li>";
+                              echo "<li data='" . $ftc["Cat_id"] . "' class='dropdown-item cats'>" . $ftc["Name"] . "</li>";
                            }   ?>
                         </ul>
                      </div>
