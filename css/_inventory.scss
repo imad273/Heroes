@@ -16,11 +16,19 @@
       }
    }
 
+   .inv-opt{
+      display: flex;
+      justify-content: space-between;
+
+      a {
+         width: 25%;
+      }
+   }
+
    .inv-form {
-      margin: 15px;
       padding: 10px;
       background-color: $second-light;
-      box-shadow: $border;
+      box-shadow: none;
       border-radius: 10px;
 
       .dropdown-toggle::after {

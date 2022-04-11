@@ -1,8 +1,17 @@
 nav {
-   position: fixed;
-   width: calc(100% - 80%);
-   background-color: $second-light;
-   height: 100%;
+   width: calc(100% - 93%);
+   background-color: $white;
+   border-right: 1px solid #E2E3E9;
+
+   .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+         width: 80%;
+      }
+   }
 
    #exit {
       display: none;
@@ -12,52 +21,25 @@ nav {
       right: 30px;
       top: 20px;
    }
-   
+
    .cont-nav {
       padding: 10px;
 
       .brand {
          width: 80%;
-         margin: 0px auto;
 
          img {
             width: 100%;
-            
+
          }
       }
 
-      .links {
-         margin-top: 20%;
-         
-         .nav-link {
-            color: #333;
-            font-size: 17px;
-            padding: .6rem 1rem;
-            font-weight: 500;
-            
-            i {
-               font-size: 20px;
-               position: relative;
-               top: 3px;
-               margin-right: 8px;
-               color: #999;
-               transition: .3s;
-               padding: 5px;
-               border-radius: 50%;
-               
-            }
+      .nav-link {
+         border-radius: 10px;
 
-            &.active{
-               color: $main-hover;
-            }
-            &.active > i {
-               color: $main-hover;
-               background-color: $bg-main;
-            }
-            &:hover, &:hover > i {
-               color: $main-hover;
-            }
-            
+         &.active {
+            background-color: $white;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
          }
       }
    }

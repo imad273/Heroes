@@ -12,13 +12,12 @@
          <section class="msgs d-flex">
             <?php include "includes/navbar.php"; ?>
             <div class="content">
-               <div class="header">
-                  <div class="tit">
-                     <i class='bx bxs-cube'></i>
-                     <span> Messages</span>
+               <div class="header d-flex justify-content-between align-items-center">
+                  <div class="tit d-flex justify-content-center flex-column">
+                     <span>Messages</span>
                   </div>
-                  <div class="open-menu">
-                     <i id='menu-btn' class='bx bx-menu-alt-right'></i>
+                  <div>
+                     <img src="./images/profile.png" alt="IMG">
                   </div>
                </div>
                <div class="msgs-con">

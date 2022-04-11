@@ -23,10 +23,14 @@
    }
    
    .cat-form {
-      margin: 15px;
+      margin: 10px 0px;
       padding: 10px;
       background-color: $second-light;
-      box-shadow: $border;
+      box-shadow: none;
       border-radius: 10px;
+      
+      input {
+         background-color: $white;
+      }
    }
 }

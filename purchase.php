@@ -3,7 +3,6 @@
    // Title
    $title = "Purchase";
 
-   
    require "functions.php";
    include "includes/head.php";
 
@@ -11,13 +10,15 @@
       <section class="purchase d-flex">
          <?php include "includes/navbar.php"; ?>
          <div class="content">
-            <div class="header">
-               <div class="tit">
-                  <i class='bx bxs-cube'></i>
-                  <span> Purchase</span>
+            <div class="header d-flex justify-content-between align-items-center">
+               <div class="tit d-flex justify-content-center flex-column">
+                  <span>Purchase</span>
+               </div>
+               <div>
+                  <img src="./images/profile.png" alt="IMG">
                </div>
             </div>
-            <div class="pur-table m-2">
+            <div class="pur-table">
                <div class="control p-2 d-flex flex-row-reverse">
                   <div class="search m-2">
                      <div class="input-group">

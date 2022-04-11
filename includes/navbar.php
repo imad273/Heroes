@@ -1,27 +1,75 @@
-<nav id='nav'>
-   <i id="exit" class='bx bxs-exit' ></i>
-   <div class="cont-nav d-flex flex-column">
-      <div class="brand">
+<nav class='position-fixed h-100'>
+   <div class="cont-nav d-flex flex-column justify-content-between h-100">
+      <div class="logo">
          <img src="images/logo.png" alt="LOGO">
       </div>
-      <div class="links">
-         <a href="dashboard.php" class="nav-link <?php setActiveClass("Dashboard") ?>"><i class='bx bxs-dashboard'></i> Dashboard</a>
-         <li class="nav-link dropdown p-0"> 
-            <a class="nav-link dropdown-toggle <?php setActiveClass("Inventory") ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               <i class='bx bxs-cube'></i> Inventory
-            </a>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+         <a href="dashboard.php" class="my-1 nav-link px-2 py-1 <?php setActiveClass("Dashboard") ?>">
+            <svg width="26" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M11.2785 14.7777H7.33683C5.1597 14.7777 3.39514 13.0132 3.39514 10.836V6.89436C3.39514 4.71723 5.1597 2.95267 7.33683 2.95267H11.2785C13.4556 2.95267 15.2202 4.71723 15.2202 6.89436V10.836C15.2202 13.0132 13.4556 14.7777 11.2785 14.7777Z" fill="#1CD4D4" />
+               <path d="M25.7313 14.7777H21.7896C19.6125 14.7777 17.8479 13.0132 17.8479 10.836V6.89436C17.8479 4.71723 19.6125 2.95267 21.7896 2.95267H25.7313C27.9084 2.95267 29.673 4.71723 29.673 6.89436V10.836C29.673 13.0132 27.9084 14.7777 25.7313 14.7777Z" fill="#573CEE" />
+               <path d="M11.2785 29.2306H7.33683C5.1597 29.2306 3.39514 27.466 3.39514 25.2889V21.3472C3.39514 19.1701 5.1597 17.4055 7.33683 17.4055H11.2785C13.4556 17.4055 15.2202 19.1701 15.2202 21.3472V25.2889C15.2202 27.466 13.4556 29.2306 11.2785 29.2306Z" fill="#573CEE" />
+               <path d="M25.7313 29.2306H21.7896C19.6125 29.2306 17.8479 27.466 17.8479 25.2889V21.3472C17.8479 19.1701 19.6125 17.4055 21.7896 17.4055H25.7313C27.9084 17.4055 29.673 19.1701 29.673 21.3472V25.2889C29.673 27.466 27.9084 29.2306 25.7313 29.2306Z" fill="#573CEE" />
+            </svg>
+         </a>
+         <a href="inventory.php" class="my-1 nav-link px-2 py-1 <?php setActiveClass("Inventory") ?>">
+            <svg width="26" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M24.4174 28.5377H8.65067C6.47355 28.5377 4.70898 26.7731 4.70898 24.596V8.82922C4.70898 6.65209 6.47355 4.88753 8.65067 4.88753H24.4174C26.5946 4.88753 28.3591 6.65209 28.3591 8.82922V24.596C28.3591 26.7731 26.5946 28.5377 24.4174 28.5377Z" fill="#E2E3E9" />
+               <path d="M28.3591 20.6543V24.596C28.3591 26.7731 26.5946 28.5377 24.4174 28.5377H8.65067C6.47355 28.5377 4.70898 26.7731 4.70898 24.596V20.6543H10.4139C11.4664 20.6543 12.4925 21.2206 12.9011 22.1902C13.499 23.6053 14.8983 24.596 16.5341 24.596C18.1699 24.596 19.5692 23.6053 20.167 22.1902C20.5756 21.2206 21.6004 20.6543 22.6542 20.6543H28.3591Z" fill="#1CD4D4" />
+            </svg>
+         </a>
+
+         <!-- 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                <li><a class="dropdown-item" href="inventory.php">View Items</a></li>
-               <li><a class="dropdown-item" href="category.php">Categories</a></li>
-               <li><hr class="dropdown-divider"></li>
-               <li><a class="dropdown-item" href="inventory.php?action=add-items">Add Items</a></li>
-               <li><a class="dropdown-item" href="category.php?action=add-category">Add Category</a></li>
-            </ul>
-         </li>
-         <a href="purchase.php" class="nav-link <?php setActiveClass("Purchase") ?>"><i class='bx bxs-cart-alt'></i> Purchase</a>
-         <a href="customers.php" class="nav-link <?php setActiveClass("Customers") ?>"><i class='bx bxs-user-detail'></i> Customers</a>
-         <a href="messages.php" class="nav-link <?php setActiveClass("Messages") ?>"><i class='bx bxs-envelope'></i> Messages</a>
-         <a href="settings.php" class="nav-link <?php setActiveClass("Settings") ?>"><i class='bx bxs-cog'></i> Settings</a>
+               <li></li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+               <li></li>
+               <li></li>
+            </ul> 
+         -->
+
+         <a href="purchase.php" class="my-1 nav-link px-2 py-1 <?php setActiveClass("Purchase") ?>">
+            <svg width="26" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M5.79166 2H1V4H4.2184L6.9872 16.6776H7V17H20V16.7519L22.1932 7.09095L22.5308 6H6.6552L6.08485 3.38852L5.79166 2ZM19.9869 8H7.092L8.62081 15H18.3978L19.9869 8Z" fill="#1CD4D4" />
+               <path d="M10 22C11.1046 22 12 21.1046 12 20C12 18.8954 11.1046 18 10 18C8.89543 18 8 18.8954 8 20C8 21.1046 8.89543 22 10 22Z" fill="#573CEE" />
+               <path d="M19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20C15 18.8954 15.8954 18 17 18C18.1046 18 19 18.8954 19 20Z" fill="#573CEE" />
+            </svg></a>
+         <a href="customers.php" class="my-1 nav-link px-2 py-1 <?php setActiveClass("Customers") ?>">
+            <svg width="26" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M8.65653 7.7721C8.22925 8.78895 7.99312 9.90592 7.99312 11.078C7.99312 14.3549 9.83864 17.2007 12.547 18.6328C11.9454 18.8456 11.298 18.9614 10.6235 18.9614C7.4386 18.9614 4.85675 16.3796 4.85675 13.1947C4.85675 10.7005 6.44013 8.57623 8.65653 7.7721ZM25.0738 11.078C25.0738 14.3549 23.2283 17.2007 20.5199 18.6328C21.1215 18.8456 21.7689 18.9614 22.4434 18.9614C25.6283 18.9614 28.2102 16.3796 28.2102 13.1947C28.2102 10.7005 26.6268 8.57622 24.4104 7.77209C24.8376 8.78895 25.0738 9.90592 25.0738 11.078Z" fill="#F2F0FF" />
+               <path d="M16.5335 17.6476C20.1617 17.6476 23.103 14.7063 23.103 11.0781C23.103 7.44986 20.1617 4.50861 16.5335 4.50861C12.9052 4.50861 9.96399 7.44986 9.96399 11.0781C9.96399 14.7063 12.9052 17.6476 16.5335 17.6476Z" fill="#573CEE" />
+               <rect x="4.70837" y="20.2753" width="23.6501" height="7.88338" rx="3.94169" fill="#1CD4D4" />
+               <rect x="7.60962" y="20.2753" width="17.8477" height="7.88338" rx="3.94169" fill="white" />
+               <rect x="9.96399" y="20.2753" width="13.139" height="7.88338" rx="3.94169" fill="#573CEE" />
+            </svg>
+         </a>
+         <a href="messages.php" class="my-1 nav-link px-2 py-1 <?php setActiveClass("Messages") ?>">
+            <svg width="26" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M24.3504 2.22946C24.3504 1.07323 23.4149 0.127228 22.2587 0.127228H5.4408C4.28457 0.127228 3.33856 1.07323 3.33856 2.22946V14.8429C3.33856 15.9991 4.28457 16.9451 5.4408 16.9451H20.1564L24.3609 21.1496L24.3504 2.22946Z" fill="#E2E3E9" />
+               <path d="M0.713966 9.59175C0.713966 8.72458 1.41559 8.01508 2.28276 8.01508H14.8962C15.7633 8.01508 16.4728 8.72458 16.4728 9.59175V19.0518C16.4728 19.919 15.7633 20.6285 14.8962 20.6285H3.85943L0.706083 23.7818L0.713966 9.59175Z" fill="#573CEE" />
+               <ellipse cx="6.2471" cy="13.904" rx="1.72824" ry="1.72824" fill="#1CD4D4" />
+               <circle cx="10.9319" cy="13.904" r="1.72824" fill="#1CD4D4" />
+            </svg>
+         </a>
+         <a href="settings.php" class="my-1 nav-link px-2 py-1 <?php setActiveClass("Settings") ?>">
+            <svg width="26" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M27.0596 5.6708C25.3279 3.93908 22.5201 3.93908 20.7884 5.6708L6.29613 20.1355C5.89933 20.5323 5.63524 21.0408 5.53933 21.5939L4.73128 26.2806C4.55653 27.2949 5.43816 28.1752 6.45248 27.9992L11.084 27.1937C11.6332 27.0978 12.1403 26.835 12.5345 26.4409L27.0596 11.9407C28.7927 10.209 28.7927 7.40251 27.0596 5.6708Z" fill="#573CEE" />
+               <path d="M17.9465 8.50224L24.2178 14.7735L26.8245 12.1759L20.5533 5.90466L17.9465 8.50224Z" fill="#1CD4D4" />
+               <path d="M5.22399 23.4229L4.73128 26.2806C4.55653 27.2949 5.43816 28.1752 6.45248 27.9992L9.30495 27.5025L5.22399 23.4229Z" fill="#1CD4D4" />
+            </svg>
+         </a>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
+         <a href="logout.php">
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M5.82916 5.86251C5.82916 2.88987 8.32734 0.470276 11.3978 0.470276H17.5011C20.564 0.470276 23.0559 2.8838 23.0559 5.85038V19.3322C23.0559 22.306 20.559 24.7268 17.4886 24.7268H11.3853C8.32233 24.7268 5.82916 22.3121 5.82916 19.3443V18.2042V5.86251Z" fill="#E2E3E9" />
+               <path d="M16.4307 11.9361L12.8312 8.40802C12.4591 8.04417 11.8605 8.04417 11.4897 8.41045C11.1201 8.77672 11.1213 9.36737 11.4921 9.73122L13.4631 11.6632H0.960756C0.437206 11.6632 0.012207 12.0817 0.012207 12.5983C0.012207 13.1138 0.437206 13.531 0.960756 13.531H13.4631L11.4921 15.4643C11.1213 15.8281 11.1201 16.4187 11.4897 16.785C11.6757 16.9682 11.9183 17.0603 12.1623 17.0603C12.4037 17.0603 12.6464 16.9682 12.8312 16.7874L16.4307 13.2593C16.6094 13.0835 16.7104 12.8458 16.7104 12.5983C16.7104 12.3497 16.6094 12.112 16.4307 11.9361" fill="#9DA5B4" />
+            </svg>
+         </a>
       </div>
    </div>
 </nav>

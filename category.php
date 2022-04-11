@@ -12,13 +12,12 @@
          <section class="category d-flex">
             <?php include "includes/navbar.php"; ?>
          <div class="content">
-            <div class="header">
-               <div class="tit">
-                  <i class='bx bxs-cube'></i>
-                  <span> Categories</span>
+            <div class="header d-flex justify-content-between align-items-center">
+               <div class="tit d-flex justify-content-center flex-column">
+                  <span>Category</span>
                </div>
-               <div class="open-menu">
-                  <i id='menu-btn' class='bx bx-menu-alt-right'></i>
+               <div>
+                  <img src="./images/profile.png" alt="IMG">
                </div>
             </div>
             <div class="note d-flex align-items-center">
@@ -86,13 +85,12 @@
          <section class="category d-flex">
             <?php include "includes/navbar.php"; ?>
             <div class="content">
-               <div class="header">
-                  <div class="tit">
-                     <i class='bx bxs-cube'></i>
-                     <span> Add New Category</span>
+               <div class="header d-flex justify-content-between align-items-center">
+                  <div class="tit d-flex justify-content-center flex-column">
+                     <span>Category</span>
                   </div>
-                  <div class="open-menu">
-                     <i id='menu-btn' class='bx bx-menu-alt-right'></i>
+                  <div>
+                     <img src="./images/profile.png" alt="IMG">
                   </div>
                </div>
                <div class="cat-form">

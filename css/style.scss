@@ -1,54 +1,47 @@
-$main: rgb(69, 41, 255);
-$main-hover: rgb(33, 1, 248);
+$main: #1CD4D4;
+$main-hover: #30ADAD;
+$second: #573CEE;
 $bg-main: #d6e5ff;
-$main-light: #FFF;
+$white: #FFF;
+$text: #2E334F;
+$second-text: #858C94;
+$main-light: #F6F8FA;
 $second-light: #F7F7F7;
-$border: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+$box-shadaw: 0px 4.85131px 9.70262px rgba(0, 0, 0, 0.02), 0px 2.42565px 7.27697px rgba(0, 0, 0, 0.02), 0px 0px 1.21283px rgba(0, 0, 0, 0.03);
 
 * {
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Roboto', sans-serif;
+   padding: 0px;
+   margin: 0px;
 }
+
 body {
-   color: #222;
+   color: $text;
    background-color: $main-light;
 }
 
 .content {
-   width: calc(100% - 20%);
+   width: calc(100% - 7%);
    position: absolute;
    right: 0px;
 
    .header {
-      background-color: $second-light;
-      padding: 15px 30px;
-      border-left: 2px solid $main-hover;
-      box-shadow: $border;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 15px 10px;
 
-      .open-menu {
-         font-size: 20px;
-         display: none;
+      img{
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
       }
       
       .tit {
-         display: flex;
-         align-items: center;
-   
-         i {
-            font-size: 20px;
-            margin-right: 8px;
-            transition: .3s;
-            padding: 5px;
-            border-radius: 50%;
-            color: $main-hover;
-            background-color: $bg-main;
-         }
-   
          span {
             font-size: 18px;
             font-weight: 700; 
+         }
+         p {
+            color: $second-text;
+            font-size: 14px;
          }
       }
    }
@@ -62,7 +55,7 @@ body {
    margin-bottom: 0px;
 
    thead {
-      background-color: $second-light;
+      background-color: $white;
 
       tr {
          vertical-align: middle;
@@ -177,10 +170,10 @@ body {
 }
 
 .form-control {
-   border: 2px solid $main-light;
-   background-color: $main-light;
+   border: 1px solid #E2E3E9;
+   background-color: $white;
    border-radius: .30rem;
-   box-shadow: $border;
+   box-shadow: none;
 
    &:focus {
       border-color: $main;
@@ -210,10 +203,10 @@ body {
    backdrop-filter: blur(5px);
 
    .confirm-msg {
-      background-color: #fff;
+      background-color: $white;
       padding: 10px 20px;
-      box-shadow: $border;
       border-radius: 5px;
+      box-shadow: $box-shadaw;
       
       span {
          font-size: 20px;
@@ -248,48 +241,34 @@ body {
 
 
 
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 825px) {
    .login {
       .content-login {
          width: 80%;
       }
    }
    .content {
-      width: 100%;
-
-      .header {
-         .open-menu {
-            display: block;
-         }
-      }
+      width: calc(100% - 15%)
    }
 
    nav {
-      width: 100%;
-      transform: translateX(100%);
-      z-index: 111111;
-      transition: 1s;
-      transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
-      
-      .cont-nav {
-         .brand {
-            margin-top: 8%;
-         }
-         .links {
-            margin: auto;
-            margin-top: 10%;
-         }
-      }
-      #exit {
-         display: block;
-      }
-      
+      width: calc(100% - 85%)
    }
 
    .dashboard {
       .overview {
-   
          .tab {
+            width: 100%;
+         }
+      }
+
+      .sec-2 {
+         flex-wrap: wrap;
+         .col-1 {
+            width: 100%;
+         }
+   
+         .col-2 {
             width: 100%;
          }
       }
@@ -304,6 +283,15 @@ body {
                   width: 47%;
                }
             }
+         }
+      }
+      .inv-opt{
+         justify-content: center;
+         flex-direction: column;
+
+         a {
+            width: 100%;
+            margin: 5px 0px;
          }
       }
    }
