@@ -3,83 +3,68 @@
       width: 100%;
 
       .tab {
-         width: 47%;
+         width: 25%;
+      }
+
+      .info {
          margin: 10px;
-         padding: 5px;
-         background-color: $second-light;
-         border-radius: 10px;
-         box-shadow: $border;
+         padding: 15px 20px;
+         background-color: $white;
+         border-radius: 5px;
+         box-shadow: $box-shadaw;
 
-         .itm {
-            width: 50%;
+         .icon {
+            border-radius: 25px;
+            padding: 10px;
+            background-color: #E8FCFC;
+         }
+
+         p {
+            font-size: 20px;
+            margin-bottom: 0px;
+            font-weight: 600;
+         }
+
+         span {
+            font-size: 13px;
+            color: $second-text;
+         }
+      }
+   }
+
+   .sec-2 {
+      .col-1 {
+         width: 75%;
+
+         .chart {
+            background-color: $white;
             margin: 10px;
-            display: flex;
-            align-items: center;
-
-            i {
-               font-size: 23px;
-               padding: 15px;
-               border-radius: 10px;
-            }
-
-            .res {
-               margin-left: 10px;
-
-               p {
-                  margin-bottom: 0px;
-                  color: #777;
-               }
-               span {
-                  font-size: 20px;
-                  font-weight: 700;
-               }
-
-            }
+            border-radius: 5px;
+            box-shadow: $box-shadaw;
          }
       }
 
-      /* The First Tab */
-      & > .tab:nth-child(1) > .row-m:nth-child(2) > .itm:nth-child(1) > i {
-         background-color: #D7FCFE;
-         color: #37B5F0
-      }
-      & > .tab:nth-child(1) > .row-m:nth-child(2) > .itm:nth-child(2) > i {
-         background-color: #fff0BD;
-         color: #F9B125
-      }
-      & > .tab:nth-child(1) > .row-m:nth-child(3) > .itm:nth-child(1) > i {
-         background-color: #fde7d3;
-         color: #FD946B
-      }
-      & > .tab:nth-child(1) > .row-m:nth-child(3) > .itm:nth-child(2) > i {
-         background-color: #d0fae7;
-         color: #43AAA0
-      }
+      .col-2 {
+         width: 25%;
+         margin: 10px 0px;
 
-      /* The Second Tab */
-      & > .tab:nth-child(2) > .row-m:nth-child(2) > .itm:nth-child(1) > i {
-         background-color: #F8DCFE;
-         color: #B550FC
-      }
-      & > .tab:nth-child(2) > .row-m:nth-child(2) > .itm:nth-child(2) > i {
-         background-color: #fDE7DD;
-         color: #E37076
-      }
-      & > .tab:nth-child(2) > .row-m:nth-child(3) > .itm:nth-child(1) > i {
-         background-color: #fADDE7;
-         color: #C906A3
-      }
-      & > .tab:nth-child(2) > .row-m:nth-child(3) > .itm:nth-child(2) > i {
-         background-color: #E4D9FF;
-         color: #643AFF
+         .user-li {
+            background-color: $white;
+            margin: 0px 10px;
+            padding: 30px 20px;
+            border-radius: 5px;
+            height: 100%;
+            box-shadow: $box-shadaw;
+
+            img {
+               width: 25px;
+               height: 25px;
+               border-radius: 25px;
+            }
+         }
       }
    }
+   
 
-   .chart {
-      margin: 18px;
-      padding: 10px;
-      background-color: $second-light;
-      border-radius: 10px;
-      box-shadow: $border
-   }
+   
 }

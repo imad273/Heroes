@@ -1,9 +1,11 @@
 .stg {
    .set-con {
-      margin: 15px;
       padding: 10px;
       background-color: $second-light;
-      box-shadow: $border;
-      border-radius: 10px;
+
+      input {
+         background-color: $white;
+         border: 1px solid #E2E3E9;
+      }
    }
 }

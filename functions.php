@@ -20,6 +20,14 @@ function setActiveClass($link) {
    }
 }
 
+/* Set the Active Class in navbar as location */
+function setStyleClass($link, $styles) {
+   global $title;
+   if($title == $link) {
+      echo $styles;
+   }
+}
+
 function formateDate($curDate, $time = false) {
    $cls = new DataBase();
    $con = $cls->_connect();

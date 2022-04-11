@@ -13,14 +13,18 @@
          <section class="inventory d-flex">
             <?php include "includes/navbar.php"; ?>
             <div class="content">
-               <div class="header">
-                  <div class="tit">
-                     <i class='bx bxs-cube'></i>
-                     <span> Inventory</span>
+               <div class="header d-flex justify-content-between align-items-center">
+                  <div class="tit d-flex justify-content-center flex-column">
+                     <span>Inventory</span>
                   </div>
-                  <div class="open-menu">
-                     <i id='menu-btn' class='bx bx-menu-alt-right'></i>
+                  <div>
+                     <img src="./images/profile.png" alt="IMG">
                   </div>
+               </div>
+               <div class="m-2 inv-opt">
+                  <a class="btn btn-primary" href="category.php?action=add-category">Add Category</a>
+                  <a class="btn btn-primary" href="inventory.php?action=add-items">Add Items</a>
+                  <a class="btn btn-primary" href="category.php">Categories</a>
                </div>
                <div class="inv-table m-2">
                   <div class="control p-2 d-flex justify-content-between align-center flex-wrap">
@@ -188,13 +192,12 @@
          <section class="inventory d-flex">
             <?php include "includes/navbar.php"; ?>
             <div class="content">
-               <div class="header">
-                  <div class="tit">
-                     <i class='bx bxs-cube'></i>
-                     <span> Add Item</span>
+            <div class="header d-flex justify-content-between align-items-center">
+                  <div class="tit d-flex justify-content-center flex-column">
+                     <span>Add Item</span>
                   </div>
-                  <div class="open-menu">
-                     <i id='menu-btn' class='bx bx-menu-alt-right'></i>
+                  <div>
+                     <img src="./images/profile.png" alt="IMG">
                   </div>
                </div>
                <div class="inv-form">
@@ -219,7 +222,7 @@
                         <input type="text" name="qua" class="form-control add-input" id="qua" autocomplete="OFF">
                      </div>
                      <div class="mb-3">
-                        <div class="dropdown ">
+                        <div class="dropdown">
                            <button class="btn btn-primary dropdown-toggle w-100 text-start" type="button" id="catBtn" data="No Select" data-bs-toggle="dropdown" aria-expanded="false">
                               Select Category
                            </button>
@@ -227,7 +230,7 @@
                            <?php
                               $stmtCat = getCategoryData();
                               while($ftcCat = $stmtCat->fetch()) {
-                                 echo "<li data='" . $ftcCat["cat_ID"] . "' class='dropdown-item cats-edit'>" . $ftcCat["Name"] . "</li>";
+                                 echo "<li data='" . $ftcCat["Cat_id"] . "' class='dropdown-item cats-edit'>" . $ftcCat["Name"] . "</li>";
                               }  ?>
                            </ul>
                         </div>

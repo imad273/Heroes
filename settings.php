@@ -12,10 +12,12 @@
          <section class="stg d-flex">
             <?php include "includes/navbar.php"; ?>
             <div class="content">
-               <div class="header">
-                  <div class="tit">
-                     <i class='bx bxs-cube'></i>
-                     <span> Settings</span>
+               <div class="header d-flex justify-content-between align-items-center">
+                  <div class="tit d-flex justify-content-center flex-column">
+                     <span>Settings</span>
+                  </div>
+                  <div>
+                     <img src="./images/profile.png" alt="IMG">
                   </div>
                </div>
                <div class="set-con"> 
@@ -44,19 +46,15 @@
                         <label for="name" class="form-label">Name</label>
                         <input type="text" name="name" value="<?php echo $ftc['Name'] ?>" class="form-control edit-input" id="email" autocomplete="OFF">
                      </div>
+                     <div class="submit d-flex">
+                        <button class="btn btn-primary w-25 m-auto mb-2" id="submit-new">Save</button>
+                     </div>
                      <div class="mb-3">
-                        <label for="email" class="form-label d-block">Password</label>
                         <div class="ctbtn d-flex">
                            <a href="?action=edit-pass" class="btn btn-primary w-25 m-auto">Edit Password</a>
                         </div>
                      </div>
-                     <div class="submit d-flex">
-                        <button class="btn btn-primary ms-auto" id="submit-new">Save</button>
-                     </div>
                   </form>
-               </div>
-               <div class="set-con d-flex justify-content">
-                  <a href="logout.php" class="btn btn-danger w-25 m-auto">Logout</a>
                </div>
             </div>
          </section>
@@ -65,20 +63,21 @@
          <section class="stg d-flex">
             <?php include "includes/navbar.php"; ?>
             <div class="content">
-               <div class="header">
-                  <div class="tit">
-                     <i class='bx bxs-cube'></i>
-                     <span> Settings</span>
+               <div class="header d-flex justify-content-between align-items-center">
+                  <div class="tit d-flex justify-content-center flex-column">
+                     <span>Edit Password</span>
+                  </div>
+                  <div>
+                     <img src="./images/profile.png" alt="IMG">
                   </div>
                </div>
-               <div class="set-con"> 
-                  <h3>Change Password</h3>
+               <div class="set-con">
                   <div class="alert-err" id="alert">
                      <div id="err-msg"></div>
                   </div>
                   <form onsubmit="return false">
                      <div class="mb-3">
-                        <label for="pass" class="form-label">Your Password</label>
+                        <label for="pass" class="form-label">Current Password</label>
                         <input type="text" name="pass" class="form-control pass-input" id="pass" autocomplete="OFF">
                      </div>
                      <div class="mb-3">
