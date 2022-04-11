@@ -17,7 +17,9 @@ if (isset($_SESSION["admin_login"])) { ?>
                <p>Welcome to Dashboard</p>
             </div>
             <div>
-               <img src="./images/profile.png" alt="IMG">
+               <a href="settings.php">
+                  <img src="./images/profile.png" alt="IMG">
+               </a>
             </div>
          </div>
          <div class="overview pt-2 d-flex justify-content-center flex-wrap">

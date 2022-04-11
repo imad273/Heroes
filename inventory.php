@@ -18,7 +18,9 @@
                      <span>Inventory</span>
                   </div>
                   <div>
-                     <img src="./images/profile.png" alt="IMG">
+                     <a href="settings.php">
+                        <img src="./images/profile.png" alt="IMG">
+                     </a>
                   </div>
                </div>
                <div class="m-2 inv-opt">
@@ -103,14 +105,15 @@
          <section class="inventory d-flex">
             <?php include "includes/navbar.php"; ?>
             <div class="content">
-               <div class="header">
-                  <div class="tit">
-                     <i class='bx bxs-cube'></i>
-                     <span> Edit Item</span>
-                  </div>
-                  <div class="open-menu">
-                     <i id='menu-btn' class='bx bx-menu-alt-right'></i>
-                  </div>
+            <div class="header d-flex justify-content-between align-items-center">
+               <div class="tit d-flex justify-content-center flex-column">
+                  <span>Category</span>
+               </div>
+               <div>
+                  <a href="settings.php">
+                     <img src="./images/profile.png" alt="IMG">
+                  </a>
+               </div>
                </div>
                <div class="inv-form">
                   <div class="alert-err" id="alert">
@@ -192,12 +195,14 @@
          <section class="inventory d-flex">
             <?php include "includes/navbar.php"; ?>
             <div class="content">
-            <div class="header d-flex justify-content-between align-items-center">
+               <div class="header d-flex justify-content-between align-items-center">
                   <div class="tit d-flex justify-content-center flex-column">
                      <span>Add Item</span>
                   </div>
                   <div>
-                     <img src="./images/profile.png" alt="IMG">
+                     <a href="settings.php">
+                        <img src="./images/profile.png" alt="IMG">
+                     </a>
                   </div>
                </div>
                <div class="inv-form">

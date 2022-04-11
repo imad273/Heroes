@@ -15,7 +15,9 @@
                   <span>Purchase</span>
                </div>
                <div>
-                  <img src="./images/profile.png" alt="IMG">
+                  <a href="settings.php">
+                     <img src="./images/profile.png" alt="IMG">
+                  </a>
                </div>
             </div>
             <div class="pur-table">

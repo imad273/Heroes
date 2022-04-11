@@ -17,7 +17,9 @@
                   <span>Category</span>
                </div>
                <div>
-                  <img src="./images/profile.png" alt="IMG">
+                  <a href="settings.php">
+                     <img src="./images/profile.png" alt="IMG">
+                  </a>
                </div>
             </div>
             <div class="note d-flex align-items-center">
@@ -90,7 +92,9 @@
                      <span>Category</span>
                   </div>
                   <div>
-                     <img src="./images/profile.png" alt="IMG">
+                     <a href="settings.php">
+                        <img src="./images/profile.png" alt="IMG">
+                     </a>
                   </div>
                </div>
                <div class="cat-form">
